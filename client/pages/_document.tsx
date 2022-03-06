@@ -3,17 +3,14 @@ import Document, {
   Html, Head, Main, NextScript,
 } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import createEmotionCache from '../utility/createEmotionCache';
+import createEmotionCache from '../utils/createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>
