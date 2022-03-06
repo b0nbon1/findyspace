@@ -1355,7 +1355,26 @@
     "@emotion/cache" "^11.7.1"
     prop-types "^15.7.2"
 
+<<<<<<< HEAD
 "@mui/system@^5.4.3", "@mui/system@^5.5.0":
+=======
+"@mui/system@^5.4.2":
+  version "5.4.2"
+  resolved "https://registry.npmjs.org/@mui/system/-/system-5.4.2.tgz"
+  integrity sha512-QegBVu6fxUNov1X9bWc1MZUTeV3A5g9PIpli7d0kzkGfq6JzrJWuPlhSPZ+6hlWmWky+bbAXhU65Qz8atWxDGw==
+  dependencies:
+    "@babel/runtime" "^7.17.0"
+    "@mui/private-theming" "^5.4.2"
+    "@mui/styled-engine" "^5.4.2"
+    "@mui/types" "^7.1.2"
+    "@mui/utils" "^5.4.2"
+    clsx "^1.1.1"
+    csstype "^3.0.10"
+    prop-types "^15.7.2"
+
+<<<<<<< HEAD
+"@mui/system@^5.5.0":
+>>>>>>> 96c97fb (setup homepage)
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/@mui/system/-/system-5.5.0.tgz#df7e540b12218db21a5edb16a6fa1d571d26455b"
   integrity sha512-zFOfERv3Y4m5ehwTRR9cGaPuMvlD2qVXmFKC60P0Gte3aD6vYObyNriZv+mDVGlhDxZTZhxBrNPH3ns25xSFtQ==
@@ -1367,6 +1386,20 @@
     "@mui/utils" "^5.4.4"
     clsx "^1.1.1"
     csstype "^3.0.11"
+=======
+"@mui/system@^5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@mui/system/-/system-5.4.3.tgz#3bc2547183b8d09b04df1c835cfeb1259f7ec3fd"
+  integrity sha512-Xz5AVe9JMufJVozMzUv93IRtnLNZnw/Q8k+Mg7Q4oRuwdir0TcYkMVUqAHetVKb3rAouIVCu/cQv0jB8gVeVsQ==
+  dependencies:
+    "@babel/runtime" "^7.17.0"
+    "@mui/private-theming" "^5.4.2"
+    "@mui/styled-engine" "^5.4.2"
+    "@mui/types" "^7.1.2"
+    "@mui/utils" "^5.4.2"
+    clsx "^1.1.1"
+    csstype "^3.0.10"
+>>>>>>> e09a364 (setup homepage)
     prop-types "^15.7.2"
 
 "@mui/types@^7.1.2":
