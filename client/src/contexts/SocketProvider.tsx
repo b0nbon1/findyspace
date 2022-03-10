@@ -13,7 +13,7 @@ export function useSocket() {
   return useContext(SocketContext);
 }
 
-export function SocketProvider({ id, children }) {
+export function SocketProvider({ id, children }: any) {
   const [socket, setSocket] = useState<Socket<any, any> | null>(null);
 
   useEffect((): any => {
