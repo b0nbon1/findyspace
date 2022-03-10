@@ -3,6 +3,7 @@ import { CacheProvider } from '@emotion/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 
 import Head from 'next/head';
+import { SnackbarProvider } from 'notistack';
 import createEmotionCache from '../utility/createEmotionCache';
 import theme from '../src/styles/theme';
 
@@ -18,7 +19,15 @@ function MyApp(props: any) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Component {...pageProps} />
+        <SnackbarProvider
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          maxSnack={3}
+        >
+          <Component {...pageProps} />
+        </SnackbarProvider>
       </ThemeProvider>
     </CacheProvider>
   );
