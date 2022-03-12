@@ -4,7 +4,7 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 
 import Head from 'next/head';
 import { SnackbarProvider } from 'notistack';
-import createEmotionCache from '../utility/createEmotionCache';
+import createEmotionCache from '../utils/createEmotionCache';
 import theme from '../src/styles/theme';
 
 const clientSideEmotionCache = createEmotionCache();
