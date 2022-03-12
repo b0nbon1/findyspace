@@ -15,7 +15,6 @@ export const ToolbarStyled = styled(Toolbar)`
 
 export const NavLink = styled(Link)`
   color: inherit;
-  // text-decoration: 
 `;
 
 export const BecomeHost = styled(Button)`

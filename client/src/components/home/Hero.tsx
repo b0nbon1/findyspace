@@ -1,27 +1,40 @@
-import { Box, Container } from '@mui/material';
+import { Box, Skeleton, Typography } from '@mui/material';
 import React from 'react';
+import useProgressiveImage from '../../hooks/useProgressiveImage';
+import { MainContainer } from './styles';
 
 function Hero() {
-  return (
-    <Container
+  const loadedImage = useProgressiveImage('https://findy-coming-soon.s3.eu-west-1.amazonaws.com/home.jpg');
+  return loadedImage ? (
+    <MainContainer
       maxWidth="lg"
       sx={{
         width: '90%',
-        height: 'auto',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
-        marginX: 'auto',
+        height: {
+          xs: '200px', sm: '250px', md: '350px', lg: '500px',
+        },
+        pl: { xs: 1, md: 2 },
+        background: `url(${loadedImage}) rgba(0, 0, 0, 0.3)`,
+        backgroundBlendMode: 'multiply',
+        backgroundSize: 'cover',
       }}
     >
-      <img
-        src="/home.jpg"
-        alt="nairobi with buildings"
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
-      />
-    </Container>
+      <Typography sx={{ color: '#fff', fontWeight: 700, fontSize: { xs: '2rem', md: '4rem' } }}>Find new locations</Typography>
+      <Typography sx={{ color: '#fff', fontWeight: 600, fontSize: { xs: '.8rem', md: '1rem' } }}>Enjoy your activities at an exclusive place.</Typography>
+    </MainContainer>
+  ) : (
+    <Skeleton
+      variant="rectangular"
+      width="90%"
+      sx={{
+        height: {
+          xs: '200px', sm: '250px', md: '350px', lg: '500px',
+        },
+        mx: 'auto',
+        my: 1,
+        borderRadius: '15px',
+      }}
+    />
   );
 }
 
