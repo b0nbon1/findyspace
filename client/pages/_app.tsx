@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { SnackbarProvider } from 'notistack';
 import createEmotionCache from '../utils/createEmotionCache';
 import theme from '../src/styles/theme';
+import '../src/styles/globals.css';
 
 const clientSideEmotionCache = createEmotionCache();
 

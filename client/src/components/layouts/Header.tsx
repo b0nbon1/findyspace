@@ -2,20 +2,33 @@ import {
   Box,
   Button,
   Container,
+  Divider,
+  IconButton,
+  Menu,
+  MenuItem,
+  Popover,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
 import Head from 'next/head';
-import Link from 'next/link';
+import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 import {
   AppBarStyled, BecomeHost, Seperator, ToolbarStyled,
 } from './styles';
 
 function Header() {
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleOpenMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
   return (
     <>
       <Head>
@@ -27,12 +40,61 @@ function Header() {
         <Container maxWidth="xl">
           <ToolbarStyled>
             <Typography sx={{ flexGrow: 1 }}>FindySpace</Typography>
-            <Box display="flex" alignItems="center">
+            <Box display="flex" alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
               <BecomeHost sx={{ mx: 1 }} variant="outlined">Become A Host</BecomeHost>
               <Seperator sx={{ mx: 1 }} />
               <Button sx={{ mx: 1 }}>Sign Up</Button>
               <Button variant="contained" sx={{ mx: 1 }}>Log In</Button>
             </Box>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenMenu}
+              color="inherit"
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {anchorEl ? <CloseIcon /> : (
+                <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 2.66675H14V4.00008H2V2.66675ZM6 7.33341H14V8.66675H6V7.33341ZM2 12.0001H14V13.3334H2V12.0001Z" fill="#4C5567" />
+                </svg>
+              )}
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
+                <Typography sx={{ fontWeight: 'bold' }}>Sign up</Typography>
+              </MenuItem>
+              <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
+                <Typography>Log in</Typography>
+              </MenuItem>
+              <Divider />
+              <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
+                <Typography>Become Host</Typography>
+              </MenuItem>
+              <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
+                <Typography>Help</Typography>
+              </MenuItem>
+            </Menu>
           </ToolbarStyled>
         </Container>
       </AppBarStyled>

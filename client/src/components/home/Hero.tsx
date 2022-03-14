@@ -1,6 +1,7 @@
 import { Box, Skeleton, Typography } from '@mui/material';
 import React from 'react';
 import useProgressiveImage from '../../hooks/useProgressiveImage';
+import SearchBar from './SearchBar';
 import { MainContainer } from './styles';
 
 function Hero() {
@@ -17,10 +18,14 @@ function Hero() {
         background: `url(${loadedImage}) rgba(0, 0, 0, 0.3)`,
         backgroundBlendMode: 'multiply',
         backgroundSize: 'cover',
+        mx: 'auto',
+        my: { xs: 0, md: '1rem' },
+        position: 'relative',
       }}
     >
       <Typography sx={{ color: '#fff', fontWeight: 700, fontSize: { xs: '2rem', md: '4rem' } }}>Find new locations</Typography>
       <Typography sx={{ color: '#fff', fontWeight: 600, fontSize: { xs: '.8rem', md: '1rem' } }}>Enjoy your activities at an exclusive place.</Typography>
+      <SearchBar />
     </MainContainer>
   ) : (
     <Skeleton
