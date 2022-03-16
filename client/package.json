@@ -2,7 +2,7 @@
   "name": "client",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4090",
+    "dev": "next dev -p 5090",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -17,7 +17,7 @@
     "@mui/icons-material": "^5.4.2",
     "@mui/lab": "^5.0.0-alpha.72",
     "@mui/material": "^5.4.2",
-    "@netlify/functions": "^1.0.0",
+    "@mui/system": "^5.4.3",
     "apollo-server-micro": "^3.6.3",
     "axios": "^0.26.1",
     "firebase": "^9.6.8",
