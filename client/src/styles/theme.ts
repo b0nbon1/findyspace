@@ -24,7 +24,7 @@ const Theme = createTheme({
   },
   typography: {
     fontFamily: [
-      '"Outfit"',
+      '"Inter"',
       '-apple-system',
       'sans-serif',
       '"Apple Color Emoji"',
