@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import {
-  Box, FormHelperText, Grid, TextField, Typography, useMediaQuery,
+  Box, CardMedia, FormHelperText, Grid, TextField, Typography, useMediaQuery,
 } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import Image from 'next/image';
@@ -18,8 +18,9 @@ const emailSchema = Yup.object({
 function Home() {
   const [loading, setLoading] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
-  const hidden = useMediaQuery((theme: any) => theme.breakpoints.up('sm'));
-  const { handleSubmit, control, formState: { errors } } = useForm({
+  const {
+    handleSubmit, control, formState: { errors }, reset,
+  } = useForm({
     resolver: yupResolver(emailSchema),
   });
   const onSubmit = async (data: any) => {
@@ -27,8 +28,10 @@ function Home() {
     try {
       await axios
         .post('/api/firebase', data);
+      reset({});
       enqueueSnackbar('Thanks joining us! We\'ll notify once we are live', { variant: 'success' });
     } catch (error) {
+      reset({});
       enqueueSnackbar('Thanks joining us! We\'ll notify once we are live', { variant: 'success' });
     }
     setLoading(false);
@@ -51,9 +54,9 @@ function Home() {
         <Box component="header" sx={{ ml: 3, mt: 3 }}>
           <Image width={110} height={25} src="/findyspace.png" />
         </Box>
-        {hidden && (
         <Box sx={{
           position: 'absolute',
+          display: { xs: 'none', sm: 'block' },
           right: -412,
           top: -412,
           width: 824,
@@ -62,7 +65,6 @@ function Home() {
           background: 'rgba(242, 121, 86, .95)',
         }}
         />
-        )}
         <Grid
           container
           alignItems="center"
@@ -79,7 +81,7 @@ function Home() {
             sm={6}
           >
             <Box sx={{
-              width: { xs: '90%', sm: '70%' },
+              width: { xs: '95%', sm: '70%' },
               display: 'flex',
               mx: 'auto',
               flexDirection: 'column',
@@ -92,6 +94,15 @@ function Home() {
               }}
               >
                 Get Notified When We Launch
+              </Typography>
+              <Typography sx={{
+                textAlign: { xs: 'center', sm: 'left' },
+                fontWeight: 200,
+                fontSize: { xs: '1rem', sm: '1rem', md: '1.5rem' },
+              }}
+              >
+                Are you ready to have an amzing unforgettable experineces?
+                Discover the best location to host your event. Discover best events near you.
               </Typography>
               <Box sx={{
                 display: 'flex',
@@ -131,6 +142,7 @@ function Home() {
                     minWidth: 'max-content',
                     borderRadius: '15px',
                     backgroundColor: '#5D33D5',
+                    fontSize: { xs: '0.5rem', md: '0.875rem' },
                     '&:hover': {
                       backgroundColor: '#5D33D5',
                     },
@@ -139,31 +151,30 @@ function Home() {
                   Notify Me
                 </LoadingButton>
               </Box>
-              <FormHelperText sx={{ mb: 3, color: 'red' }}>{errors?.email?.message}</FormHelperText>
-              <Typography>Don’t worry, we won’t spam you.</Typography>
+              <FormHelperText sx={{ mb: 1, color: 'red' }}>{errors?.email?.message}</FormHelperText>
+              <Typography sx={{ mb: 3 }}>Don’t worry, we won’t spam you.</Typography>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Box sx={{
-              height: '400px',
-              width: '400px',
+              height: { xs: '200px', md: '400px' },
+              width: { xs: '200px', md: '400px' },
               background: '#F27956',
               borderRadius: '50%',
               position: 'relative',
               mx: 'auto',
             }}
             >
-              <img
-                style={{
+              <CardMedia
+                sx={{
                   position: 'absolute',
-                  right: '-50px',
-                  top: '-20px',
+                  right: { xs: '-25px', md: '-50px' },
+                  top: { xs: '-10px', md: '-20px' },
                   transform: 'rotate(28deg)',
-                  height: '440px',
-                  width: '440px',
+                  height: { xs: '220px', md: '440px' },
+                  width: { xs: '220px', md: '440px' },
                 }}
-                src="/rocket.png"
-                alt="rocket launched"
+                image="/rocket.png"
               />
             </Box>
           </Grid>
