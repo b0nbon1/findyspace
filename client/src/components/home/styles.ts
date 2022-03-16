@@ -9,3 +9,5 @@ export const MainContainer = styled(Container)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
 }));
+
+export const Img = styled('img')();
