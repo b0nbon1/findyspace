@@ -31,17 +31,34 @@ function SearchBar() {
     >
       <Box sx={{ mx: 1, flex: 1, width: { xs: '100%', md: 'auto' } }}>
         <Typography sx={{ my: 1 }}>Activity</Typography>
-        <TextField size="small" InputLabelProps={{ shrink: false }} label="Choose a Category" select fullWidth placeholder="Choose a Category">
+        <TextField
+          size="small"
+          InputLabelProps={{ shrink: false }}
+          label="Choose a Category"
+          select
+          fullWidth
+          placeholder="Choose a Category"
+        >
           <MenuItem>Work</MenuItem>
         </TextField>
       </Box>
       <Box sx={{ mx: 1, flex: 1, width: { xs: '100%', md: 'auto' } }}>
         <Typography sx={{ my: 1, flex: 1 }}>Date</Typography>
-        <TextField size="small" fullWidth select placeholder="Enter an activity" />
+        <TextField
+          size="small"
+          fullWidth
+          select
+          placeholder="Enter an activity"
+        />
       </Box>
       <Box sx={{ mx: 1, flex: 1, width: { xs: '100%', md: 'auto' } }}>
         <Typography sx={{ my: 1 }}>Location</Typography>
-        <TextField size="small" fullWidth select placeholder="Search for location" />
+        <TextField
+          size="small"
+          fullWidth
+          select
+          placeholder="Search for location"
+        />
       </Box>
       <Button
         variant="contained"
@@ -54,7 +71,9 @@ function SearchBar() {
         }}
       >
         <SearchIcon />
-        <Typography sx={{ ml: 1, display: { xs: 'block', md: 'none' } }}>Search</Typography>
+        <Typography sx={{ ml: 1, display: { xs: 'block', md: 'none' } }}>
+          Search
+        </Typography>
       </Button>
     </Paper>
   );
@@ -79,17 +98,34 @@ export function SearchBarMobile() {
     >
       <Box sx={{ mx: 1, flex: 1, width: { xs: '100%', md: 'auto' } }}>
         <Typography sx={{ my: 1 }}>Activity</Typography>
-        <TextField size="small" InputLabelProps={{ shrink: false }} label="Choose a Category" select fullWidth placeholder="Choose a Category">
+        <TextField
+          size="small"
+          InputLabelProps={{ shrink: false }}
+          label="Choose a Category"
+          select
+          fullWidth
+          placeholder="Choose a Category"
+        >
           <MenuItem>Work</MenuItem>
         </TextField>
       </Box>
       <Box sx={{ mx: 1, flex: 1, width: { xs: '100%', md: 'auto' } }}>
         <Typography sx={{ my: 1, flex: 1 }}>Date</Typography>
-        <TextField size="small" fullWidth select placeholder="Enter an activity" />
+        <TextField
+          size="small"
+          fullWidth
+          select
+          placeholder="Enter an activity"
+        />
       </Box>
       <Box sx={{ mx: 1, flex: 1, width: { xs: '100%', md: 'auto' } }}>
         <Typography sx={{ my: 1 }}>Location</Typography>
-        <TextField size="small" fullWidth select placeholder="Search for location" />
+        <TextField
+          size="small"
+          fullWidth
+          select
+          placeholder="Search for location"
+        />
       </Box>
       <Button
         variant="contained"

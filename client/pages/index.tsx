@@ -4,6 +4,7 @@ import Hero from '../src/components/home/Hero';
 import PopularActivities from '../src/components/home/PopularActivities';
 import PopularLocations from '../src/components/home/PopularLocations';
 import { SearchBarMobile } from '../src/components/home/SearchBar';
+import WhyUs from '../src/components/home/WhyUs';
 import Header from '../src/components/layouts/Header';
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
       <FlexibleContainer />
       <PopularActivities />
       <PopularLocations />
+      <WhyUs />
     </div>
   );
 }
