@@ -101,7 +101,7 @@ function Home() {
                 fontSize: { xs: '1rem', sm: '1rem', md: '1.5rem' },
               }}
               >
-                Are you ready to have an amzing unforgettable experiences?
+                Are you ready to have an amazing unforgettable experiences?
                 Discover the best location to host your events.
               </Typography>
               <Box sx={{
