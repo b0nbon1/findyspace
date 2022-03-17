@@ -6,23 +6,17 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Popover,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from '@mui/material';
 import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
-import {
-  AppBarStyled, BecomeHost, Seperator, ToolbarStyled,
-} from './styles';
+import { AppBarStyled, BecomeHost, Seperator, ToolbarStyled } from './styles';
 
 function Header() {
-  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('md'));
-
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
+    null,
+  );
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -40,11 +34,19 @@ function Header() {
         <Container maxWidth="xl">
           <ToolbarStyled>
             <Typography sx={{ flexGrow: 1 }}>FindySpace</Typography>
-            <Box display="flex" alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <BecomeHost sx={{ mx: 1 }} variant="outlined">Become A Host</BecomeHost>
+            <Box
+              display="flex"
+              alignItems="center"
+              sx={{ display: { xs: 'none', md: 'flex' } }}
+            >
+              <BecomeHost sx={{ mx: 1 }} variant="outlined">
+                Become A Host
+              </BecomeHost>
               <Seperator sx={{ mx: 1 }} />
               <Button sx={{ mx: 1 }}>Sign Up</Button>
-              <Button variant="contained" sx={{ mx: 1 }}>Log In</Button>
+              <Button variant="contained" sx={{ mx: 1 }}>
+                Log In
+              </Button>
             </Box>
             <IconButton
               size="large"
@@ -57,9 +59,20 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {anchorEl ? <CloseIcon /> : (
-                <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 2.66675H14V4.00008H2V2.66675ZM6 7.33341H14V8.66675H6V7.33341ZM2 12.0001H14V13.3334H2V12.0001Z" fill="#4C5567" />
+              {anchorEl ? (
+                <CloseIcon />
+              ) : (
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 2.66675H14V4.00008H2V2.66675ZM6 7.33341H14V8.66675H6V7.33341ZM2 12.0001H14V13.3334H2V12.0001Z"
+                    fill="#4C5567"
+                  />
                 </svg>
               )}
             </IconButton>
@@ -98,9 +111,7 @@ function Header() {
           </ToolbarStyled>
         </Container>
       </AppBarStyled>
-
     </>
-
   );
 }
 
