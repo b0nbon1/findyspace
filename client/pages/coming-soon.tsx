@@ -101,8 +101,8 @@ function Home() {
                 fontSize: { xs: '1rem', sm: '1rem', md: '1.5rem' },
               }}
               >
-                Are you ready to have an amzing unforgettable experineces?
-                Discover the best location to host your event. Discover best events near you.
+                Are you ready to have an amzing unforgettable experiences?
+                Discover the best location to host your events.
               </Typography>
               <Box sx={{
                 display: 'flex',
@@ -123,10 +123,11 @@ function Home() {
                       value={value || ''}
                       sx={{
                         flexGrow: 1,
-                        backgroundColor: '#fff',
+                        backgroundColor: '#F8FAFC',
                       }}
                       InputProps={{
                         disableUnderline: true,
+                        sx: { backgroundColor: '#F8FAFC' },
                       }}
                       placeholder="Enter Your Email Address"
                       onChange={onChange}
