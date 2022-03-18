@@ -81,26 +81,9 @@ function ActivityCard({ name, Icon, spaces, id }: ActivityCardProps) {
       }}
     >
       {Icon}
-<<<<<<< HEAD
       <Box sx={{ mb: { xs: 0, sm: 1, md: 3 } }}>
         <Typography sx={{ fontSize: { xs: 12, sm: 14, md: 16 } }}>
           {name}
-=======
-      <Typography sx={{ fontSize: { xs: 12, sm: 14, md: 16 } }}>
-        {name}
-      </Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <Typography
-          sx={{ fontSize: { xs: 12, sm: 14, md: 16 }, color: '#9EA1A8' }}
-        >
-          {spaces} Spaces
->>>>>>> c867174 (add why us section)
         </Typography>
         <Box
           sx={{
