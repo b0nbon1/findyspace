@@ -142,7 +142,10 @@ function Home() {
                         disableUnderline: true,
                       }}
                       placeholder="Enter Your Email Address"
-                      onChange={onChange}
+                      onChange={(e) => {
+                        e.target.value = e.target.value.trim();
+                        onChange(e);
+                      }}
                     />
                   )}
                 />
