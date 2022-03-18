@@ -158,7 +158,10 @@ function Home() {
                         sx: { backgroundColor: '#F8FAFC' },
                       }}
                       placeholder="Enter Your Email Address"
-                      onChange={onChange}
+                      onChange={(e) => {
+                        e.target.value = e.target.value.trim();
+                        onChange(e);
+                      }}
                     />
                   )}
                 />

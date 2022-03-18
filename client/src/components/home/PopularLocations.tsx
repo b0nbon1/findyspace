@@ -1,6 +1,7 @@
 import { CardMedia, Container, Grid, Typography, Box } from '@mui/material';
 import React from 'react';
 import LocationPinIcon from '../../icons/LocationPinIcon';
+import SectionHeader from './SectionHeader';
 
 interface PopularLocationCardProp {
   id: number;
@@ -45,12 +46,7 @@ function PopularLocations() {
         my: 4,
       }}
     >
-      <Typography
-        variant="h4"
-        sx={{ fontSize: { xs: '1.5rem', md: '2.5rem' }, mb: 2 }}
-      >
-        People love these locations
-      </Typography>
+      <SectionHeader title="Most Popular Activities" hasSeeAll />
       <Typography sx={{ fontSize: { xs: 12, sm: 14, md: 16 }, mb: 2 }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget turpis a
         vel ac odio velit. Nulla lorem id blandit amet.

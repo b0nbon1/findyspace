@@ -5,6 +5,7 @@ import BusinessIcon from '../../icons/BusinessIcon';
 import PartyIcon from '../../icons/PartyIcon';
 import WeddingIcon from '../../icons/WeddingIcon';
 import WorkspaceIcon from '../../icons/WorkspaceIcon';
+import SectionHeader from './SectionHeader';
 
 interface ActivityCardProps {
   id: number;
@@ -49,12 +50,7 @@ function PopularActivities() {
         my: 4,
       }}
     >
-      <Typography
-        variant="h4"
-        sx={{ fontSize: { xs: '1.5rem', md: '2.5rem' }, mb: 2 }}
-      >
-        Most popular activities
-      </Typography>
+      <SectionHeader title="Most Popular Activities" hasSeeAll />
       <Typography sx={{ fontSize: { xs: 12, sm: 14, md: 16 } }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget turpis a
         vel ac odio velit. Nulla lorem id blandit amet.
@@ -78,26 +74,31 @@ function ActivityCard({ name, Icon, spaces, id }: ActivityCardProps) {
         p: 1,
         m: 1,
         pr: 2,
-        height: { xs: '150px', sm: '200px' },
+        height: { xs: '169px', sm: '200px' },
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       }}
     >
       {Icon}
-      <Typography sx={{ fontSize: { xs: 12, sm: 14, md: 16 } }}>
-        {name}
-      </Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <Typography
-          sx={{ fontSize: { xs: 12, sm: 14, md: 16 }, color: '#9EA1A8' }}
-        >
-          {spaces} Spaces
+      <Box sx={{ mb: { xs: 0, sm: 1, md: 3 } }}>
+        <Typography sx={{ fontSize: { xs: 12, sm: 14, md: 16 } }}>
+          {name}
         </Typography>
-        <ArrowForwardIcon sx={{ fontSize: { xs: 20, sm: 24, md: 28 } }} />
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <Typography
+            sx={{ fontSize: { xs: 12, sm: 14, md: 16 }, color: '#9EA1A8' }}
+          >
+            {spaces} Spaces
+          </Typography>
+          <ArrowForwardIcon sx={{ fontSize: { xs: 20, sm: 24, md: 28 } }} />
+        </Box>
       </Box>
     </Paper>
   );

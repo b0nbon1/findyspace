@@ -1,9 +1,11 @@
 import React from 'react';
+import BlogSection from '../src/components/home/BlogSection';
 import FlexibleContainer from '../src/components/home/FlexibleContainer';
 import Hero from '../src/components/home/Hero';
 import PopularActivities from '../src/components/home/PopularActivities';
 import PopularLocations from '../src/components/home/PopularLocations';
 import { SearchBarMobile } from '../src/components/home/SearchBar';
+import SupportContainer from '../src/components/home/SupportContainer';
 import WhyUs from '../src/components/home/WhyUs';
 import Header from '../src/components/layouts/Header';
 
@@ -17,6 +19,8 @@ function Home() {
       <PopularActivities />
       <PopularLocations />
       <WhyUs />
+      <BlogSection />
+      <SupportContainer />
     </div>
   );
 }
