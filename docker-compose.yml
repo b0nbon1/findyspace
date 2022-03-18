@@ -58,7 +58,7 @@ services:
     links:
       - api
     ports:
-      - '4090:4090'
+      - '5090:5090'
     networks:
       - findyspace
 
