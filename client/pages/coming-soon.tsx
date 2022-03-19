@@ -40,8 +40,10 @@ function Home() {
   return (
     <div>
       <Head>
-        <title>Findyspace | Coming Soon</title>
-        <meta name="description" content="findy space coming soon to you" />
+        <title>
+          Findyspace | Coming Soon | Explore event spaces, meeting places and workspaces near you
+        </title>
+        <meta name="description" content="findyspace or findmyspace Africa app is used to explore spaces in Kenya and East Africa. Explore events, meeting, fun locations available" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box
