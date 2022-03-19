@@ -7,12 +7,10 @@ import PopularLocations from '../src/components/home/PopularLocations';
 import { SearchBarMobile } from '../src/components/home/SearchBar';
 import SupportContainer from '../src/components/home/SupportContainer';
 import WhyUs from '../src/components/home/WhyUs';
-import Header from '../src/components/layouts/Header';
 
 function Home() {
   return (
     <div style={{ width: '100%', margin: 0 }}>
-      <Header />
       <Hero />
       <SearchBarMobile />
       <FlexibleContainer />

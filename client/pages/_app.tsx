@@ -7,6 +7,7 @@ import { SnackbarProvider } from 'notistack';
 import createEmotionCache from '../utils/createEmotionCache';
 import theme from '../src/styles/theme';
 import '../src/styles/globals.css';
+import MainLayout from '../src/components/layouts/MainLayout';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -27,7 +28,9 @@ function MyApp(props: any) {
           }}
           maxSnack={3}
         >
-          <Component {...pageProps} />
+          <MainLayout>
+            <Component {...pageProps} />
+          </MainLayout>
         </SnackbarProvider>
       </ThemeProvider>
     </CacheProvider>

@@ -32,7 +32,7 @@ function BlogSection() {
                 height: { xs: '200px', md: '360px' },
                 backgroundImage: `url('${blog.img}')`,
                 borderRadius: '16px',
-                p: { xs: 1, sm: 2, md: 4 },
+                p: { xs: 3, md: 4 },
                 position: 'relative',
               }}
             >

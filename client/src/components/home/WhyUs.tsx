@@ -110,7 +110,7 @@ function WhyUs() {
         container
       >
         {reasons.map((reason) => (
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid key={reason.id} item xs={12} sm={6} md={4}>
             <Box
               className="tiles"
               sx={{
