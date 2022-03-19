@@ -60,6 +60,7 @@ function FlexibleContainer() {
         }}
       >
         <Typography
+          variant="h4"
           sx={{
             fontSize: { xs: '1rem', md: '2rem' },
             color: '#fff',
