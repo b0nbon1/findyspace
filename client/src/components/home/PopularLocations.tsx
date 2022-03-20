@@ -46,7 +46,7 @@ function PopularLocations() {
         my: 4,
       }}
     >
-      <SectionHeader title="Most Popular Activities" hasSeeAll />
+      <SectionHeader title="Most Popular Locations" hasSeeAll />
       <Typography sx={{ fontSize: { xs: 12, sm: 14, md: 16 }, mb: 2 }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget turpis a
         vel ac odio velit. Nulla lorem id blandit amet.
