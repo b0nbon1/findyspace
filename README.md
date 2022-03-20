@@ -67,6 +67,3 @@ It's is using navigate to route `https://localhost:<port>`
 3. for api app go to postman and test with url `localhost:3090`
 
 
-
-
-
