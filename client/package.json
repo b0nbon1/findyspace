@@ -5,7 +5,8 @@
     "dev": "next dev -p 5090",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint-fix": "eslint lint --fix ."
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",

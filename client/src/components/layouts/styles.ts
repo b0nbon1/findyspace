@@ -1,11 +1,9 @@
-import {
-  AppBar, Box, Button, Toolbar,
-} from '@mui/material';
+import { AppBar, Box, Button, Toolbar } from '@mui/material';
 import { styled } from '@mui/system';
 import Link from 'next/link';
 
 export const AppBarStyled = styled(AppBar)`
-  background-color: #F8FAFC;
+  background-color: #fff;
   color: #111827;
 `;
 
@@ -18,11 +16,11 @@ export const NavLink = styled(Link)`
 `;
 
 export const BecomeHost = styled(Button)`
-  border: 1px solid #E6E6ED;
-  color: #5D33D5;
+  border: 1px solid #e6e6ed;
+  color: #5d33d5;
 `;
 
 export const Seperator = styled(Box)`
   height: 30px;
-  border: 1px solid #E6E6ED;
+  border: 1px solid #e6e6ed;
 `;

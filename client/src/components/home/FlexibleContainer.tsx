@@ -1,9 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import React from 'react';
 import { Img } from './styles';
 
@@ -20,14 +15,15 @@ function FlexibleContainer() {
         width: '90%',
       }}
     >
-      <Box sx={{
-        width: { xs: '30px', md: '96px' },
-        height: { xs: '30px', md: '96px' },
-        backgroundColor: '#5D33D5',
-        borderRadius: '50%',
-        position: 'absolute',
-        top: { xs: '70%', md: '50%' },
-      }}
+      <Box
+        sx={{
+          width: { xs: '30px', md: '96px' },
+          height: { xs: '30px', md: '96px' },
+          backgroundColor: '#5D33D5',
+          borderRadius: '50%',
+          position: 'absolute',
+          top: { xs: '70%', md: '50%' },
+        }}
       />
       <Box
         sx={{
@@ -63,19 +59,29 @@ function FlexibleContainer() {
           top: { xs: '20%', md: '40%' },
         }}
       >
-        <Typography sx={{ fontSize: { xs: '1rem', md: '2rem' }, color: '#fff', width: { xs: '60%', md: 'auto' } }}>Haven&apos;t decided on a space yet?</Typography>
+        <Typography
+          variant="h4"
+          sx={{
+            fontSize: { xs: '1rem', md: '2rem' },
+            color: '#fff',
+            width: { xs: '60%', md: 'auto' },
+          }}
+        >
+          Haven&apos;t decided on a space yet?
+        </Typography>
         <Button variant="contained">I&apos;m Flexible</Button>
       </Box>
-      <Box sx={{
-        position: 'absolute',
-        backgroundColor: '#F27956',
-        width: { xs: '138px', md: '360px' },
-        height: { xs: '138px', md: '360px' },
-        clipPath: 'circle(46.5% at 99% 99%)',
-        right: 0,
-        bottom: 0,
-        borderBottomRightRadius: '10px',
-      }}
+      <Box
+        sx={{
+          position: 'absolute',
+          backgroundColor: '#F27956',
+          width: { xs: '138px', md: '360px' },
+          height: { xs: '138px', md: '360px' },
+          clipPath: 'circle(46.5% at 99% 99%)',
+          right: 0,
+          bottom: 0,
+          borderBottomRightRadius: '10px',
+        }}
       />
     </Container>
   );

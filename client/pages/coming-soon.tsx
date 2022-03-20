@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import {
-  Box, CardMedia, FormHelperText, Grid, TextField, Typography, useMediaQuery,
+  Box,
+  CardMedia,
+  FormHelperText,
+  Grid,
+  TextField,
+  Typography,
 } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import Image from 'next/image';
@@ -19,20 +24,26 @@ function Home() {
   const [loading, setLoading] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   const {
-    handleSubmit, control, formState: { errors }, reset,
+    handleSubmit,
+    control,
+    formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(emailSchema),
   });
   const onSubmit = async (data: any) => {
     setLoading(true);
     try {
-      await axios
-        .post('/api/firebase', data);
+      await axios.post('/api/firebase', data);
       reset({});
-      enqueueSnackbar('Thanks joining us! We\'ll notify once we are live', { variant: 'success' });
+      enqueueSnackbar("Thanks joining us! We'll notify once we are live", {
+        variant: 'success',
+      });
     } catch (error) {
       reset({});
-      enqueueSnackbar('Thanks joining us! We\'ll notify once we are live', { variant: 'success' });
+      enqueueSnackbar("Thanks joining us! We'll notify once we are live", {
+        variant: 'success',
+      });
     }
     setLoading(false);
   };
@@ -54,16 +65,17 @@ function Home() {
         <Box component="header" sx={{ ml: 3, mt: 3 }}>
           <Image width={110} height={25} src="/findyspace.png" />
         </Box>
-        <Box sx={{
-          position: 'absolute',
-          display: { xs: 'none', sm: 'block' },
-          right: -412,
-          top: -412,
-          width: 824,
-          height: 824,
-          filter: 'blur(10rem)',
-          background: 'rgba(242, 121, 86, .95)',
-        }}
+        <Box
+          sx={{
+            position: 'absolute',
+            display: { xs: 'none', sm: 'block' },
+            right: -412,
+            top: -412,
+            width: 824,
+            height: 824,
+            filter: 'blur(10rem)',
+            background: 'rgba(242, 121, 86, .95)',
+          }}
         />
         <Grid
           container
@@ -75,44 +87,45 @@ function Home() {
             flexDirection: { xs: 'column-reverse', sm: 'row' },
           }}
         >
-          <Grid
-            item
-            xs={12}
-            sm={6}
-          >
-            <Box sx={{
-              width: { xs: '95%', sm: '70%' },
-              display: 'flex',
-              mx: 'auto',
-              flexDirection: 'column',
-            }}
-            >
-              <Typography sx={{
-                textAlign: { xs: 'center', sm: 'left' },
-                fontWeight: 'bold',
-                fontSize: { xs: '2rem', sm: '3rem', md: '4rem' },
+          <Grid item xs={12} sm={6}>
+            <Box
+              sx={{
+                width: { xs: '95%', sm: '70%' },
+                display: 'flex',
+                mx: 'auto',
+                flexDirection: 'column',
               }}
+            >
+              <Typography
+                sx={{
+                  textAlign: { xs: 'center', sm: 'left' },
+                  fontWeight: 'bold',
+                  fontSize: { xs: '2rem', sm: '3rem', md: '4rem' },
+                }}
               >
                 Get Notified When We Launch
               </Typography>
-              <Typography sx={{
-                textAlign: { xs: 'center', sm: 'left' },
-                fontWeight: 200,
-                fontSize: { xs: '1rem', sm: '1rem', md: '1.5rem' },
-              }}
+              <Typography
+                sx={{
+                  textAlign: { xs: 'center', sm: 'left' },
+                  fontWeight: 200,
+                  fontSize: { xs: '1rem', sm: '1rem', md: '1.5rem' },
+                }}
               >
                 Are you ready to have an amzing unforgettable experineces?
-                Discover the best location to host your event. Discover best events near you.
+                Discover the best location to host your event. Discover best
+                events near you.
               </Typography>
-              <Box sx={{
-                display: 'flex',
-                alignItems: 'center',
-                border: '1px solid #E6E6ED',
-                height: '48px',
-                borderRadius: '20px',
-                pl: 2,
-                mt: 3,
-              }}
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  border: '1px solid #E6E6ED',
+                  height: '48px',
+                  borderRadius: '20px',
+                  pl: 2,
+                  mt: 3,
+                }}
               >
                 <Controller
                   name="email"
@@ -129,7 +142,10 @@ function Home() {
                         disableUnderline: true,
                       }}
                       placeholder="Enter Your Email Address"
-                      onChange={onChange}
+                      onChange={(e) => {
+                        e.target.value = e.target.value.trim();
+                        onChange(e);
+                      }}
                     />
                   )}
                 />
@@ -151,19 +167,24 @@ function Home() {
                   Notify Me
                 </LoadingButton>
               </Box>
-              <FormHelperText sx={{ mb: 1, color: 'red' }}>{errors?.email?.message}</FormHelperText>
-              <Typography sx={{ mb: 3 }}>Don’t worry, we won’t spam you.</Typography>
+              <FormHelperText sx={{ mb: 1, color: 'red' }}>
+                {errors?.email?.message}
+              </FormHelperText>
+              <Typography sx={{ mb: 3 }}>
+                Don’t worry, we won’t spam you.
+              </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Box sx={{
-              height: { xs: '200px', md: '400px' },
-              width: { xs: '200px', md: '400px' },
-              background: '#F27956',
-              borderRadius: '50%',
-              position: 'relative',
-              mx: 'auto',
-            }}
+            <Box
+              sx={{
+                height: { xs: '200px', md: '400px' },
+                width: { xs: '200px', md: '400px' },
+                background: '#F27956',
+                borderRadius: '50%',
+                position: 'relative',
+                mx: 'auto',
+              }}
             >
               <CardMedia
                 sx={{

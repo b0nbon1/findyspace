@@ -4,7 +4,7 @@ import firestore from '../../utils/firestore';
 
 type Data = {
   message: string;
-}
+};
 
 export default async function handler(
   req: NextApiRequest,
