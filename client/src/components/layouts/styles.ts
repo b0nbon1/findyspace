@@ -3,7 +3,7 @@ import { styled } from '@mui/system';
 import Link from 'next/link';
 
 export const AppBarStyled = styled(AppBar)`
-  background-color: #f8fafc;
+  background-color: #fff;
   color: #111827;
 `;
 
