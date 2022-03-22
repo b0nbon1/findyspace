@@ -26,7 +26,7 @@ function BlogSection() {
       />
       <Grid container spacing={2}>
         {blogs.map((blog) => (
-          <Grid xs={12} md={6} item>
+          <Grid key={blog.id} xs={12} md={6} item>
             <Box
               sx={{
                 height: { xs: '200px', md: '360px' },
