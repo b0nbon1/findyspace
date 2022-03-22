@@ -1,0 +1,1231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div
+  style={
+    Object {
+      "margin": 0,
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <span
+      className="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-1rde2io-MuiSkeleton-root"
+      style={
+        Object {
+          "height": undefined,
+          "width": "90%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 css-1s5qz7t-MuiPaper-root"
+  >
+    <div
+      className="MuiBox-root css-mecphv"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-15wu8wo-MuiTypography-root"
+      >
+        Activity
+      </p>
+      <div
+        className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+      >
+        <label
+          className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-1pysi21-MuiFormLabel-root-MuiInputLabel-root"
+          data-shrink={false}
+        >
+          Choose a Category
+        </label>
+        <div
+          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+          variant="outlined"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputSizeSmall css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <span
+              className="notranslate"
+            >
+              ​
+            </span>
+          </div>
+          <input
+            aria-hidden={true}
+            autoFocus={false}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            placeholder="Choose a Category"
+            required={false}
+            tabIndex={-1}
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-1g8cwq9"
+            >
+              <span>
+                Choose a Category
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiBox-root css-mecphv"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-1vvxrfl-MuiTypography-root"
+      >
+        Date
+      </p>
+      <div
+        className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+      >
+        <div
+          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+          variant="outlined"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputSizeSmall css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <span
+              className="notranslate"
+            >
+              ​
+            </span>
+          </div>
+          <input
+            aria-hidden={true}
+            autoFocus={false}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            placeholder="Enter an activity"
+            required={false}
+            tabIndex={-1}
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-hdw1oc"
+            >
+              <span
+                className="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiBox-root css-mecphv"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-15wu8wo-MuiTypography-root"
+      >
+        Location
+      </p>
+      <div
+        className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+      >
+        <div
+          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+          variant="outlined"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputSizeSmall css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <span
+              className="notranslate"
+            >
+              ​
+            </span>
+          </div>
+          <input
+            aria-hidden={true}
+            autoFocus={false}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            placeholder="Search for location"
+            required={false}
+            tabIndex={-1}
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-hdw1oc"
+            >
+              <span
+                className="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <button
+      className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-xb3s2f-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="SearchIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+        />
+      </svg>
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-yyvcc2-MuiTypography-root"
+      >
+        Search
+      </p>
+    </button>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-4sv1ns-MuiContainer-root"
+  >
+    <div
+      className="MuiBox-root css-yvmou"
+    />
+    <div
+      className="MuiBox-root css-t3ht3g"
+    >
+      <img
+        alt="sally 2"
+        className="css-0"
+        src="/Saly-2.png"
+        style={
+          Object {
+            "height": "100%",
+            "marginLeft": 0,
+            "marginTop": "-30%",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="MuiBox-root css-w3fzle"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-1n7gtnu-MuiTypography-root"
+      >
+        Haven't decided on a space yet?
+      </h4>
+      <button
+        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        I'm Flexible
+      </button>
+    </div>
+    <div
+      className="MuiBox-root css-vbfxta"
+    />
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1e0n686-MuiContainer-root"
+  >
+    <div
+      className="MuiBox-root css-9urbrp"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-1sax0vg-MuiTypography-root"
+      >
+        Most Popular Activities
+      </h4>
+      <button
+        className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-eyahqw-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        See All
+      </button>
+    </div>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1394dv-MuiTypography-root"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget turpis a vel ac odio velit. Nulla lorem id blandit amet.
+    </p>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-1yo5l5p-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-cj16wl-MuiPaper-root"
+        >
+          <svg
+            fill="none"
+            height="72"
+            viewBox="0 0 72 72"
+            width="72"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M57 20.6V15H15V20.6H16.4V48.6H15.7C15.3136 48.6 15 48.9129 15 49.3C15 49.6871 15.3136 50 15.7 50H16.4H35.3V51.4C35.3 51.4329 35.3147 51.4616 35.3189 51.4938C34.1051 51.7997 33.2 52.8917 33.2 54.2C33.2 55.7442 34.4558 57 36 57C37.5442 57 38.8 55.7442 38.8 54.2C38.8 52.8917 37.8949 51.7997 36.6811 51.4938C36.6853 51.4616 36.7 51.4329 36.7 51.4V50H55.6H56.3C56.6864 50 57 49.6871 57 49.3C57 48.9129 56.6864 48.6 56.3 48.6H55.6V20.6H57ZM37.4 54.2C37.4 54.9721 36.7721 55.6 36 55.6C35.2279 55.6 34.6 54.9721 34.6 54.2C34.6 53.4279 35.2279 52.8 36 52.8C36.7721 52.8 37.4 53.4279 37.4 54.2ZM16.4 16.4H55.6V19.2H16.4V16.4ZM54.2 48.6H17.8V20.6H54.2V48.6Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M50 43.7001H39.5C39.1136 43.7001 38.8 44.013 38.8 44.4001C38.8 44.7872 39.1136 45.1001 39.5 45.1001H50C50.3864 45.1001 50.7 44.7872 50.7 44.4001C50.7 44.013 50.3864 43.7001 50 43.7001Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M21.9998 40.1999H28.9998C29.3862 40.1999 29.6998 39.887 29.6998 39.4999C29.6998 39.1128 29.3862 38.7999 28.9998 38.7999H21.9998C21.6134 38.7999 21.2998 39.1128 21.2998 39.4999C21.2998 39.887 21.6134 40.1999 21.9998 40.1999Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M36.0003 40.1999H46.5003C46.8867 40.1999 47.2003 39.887 47.2003 39.4999C47.2003 39.1128 46.8867 38.7999 46.5003 38.7999H36.0003C35.6139 38.7999 35.3003 39.1128 35.3003 39.4999C35.3003 39.887 35.6139 40.1999 36.0003 40.1999Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M32.0028 39.003C31.8768 39.1353 31.7998 39.3103 31.7998 39.5C31.7998 39.682 31.8768 39.864 32.0028 39.997C32.1358 40.123 32.3178 40.2 32.4998 40.2C32.6818 40.2 32.8638 40.123 32.9968 39.997C33.1228 39.864 33.1998 39.682 33.1998 39.5C33.1998 39.318 33.1228 39.1353 32.9968 39.003C32.7378 38.744 32.2618 38.744 32.0028 39.003Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M36.0003 43.7001H25.5003C25.1139 43.7001 24.8003 44.013 24.8003 44.4001C24.8003 44.7872 25.1139 45.1001 25.5003 45.1001H36.0003C36.3867 45.1001 36.7003 44.7872 36.7003 44.4001C36.7003 44.013 36.3867 43.7001 36.0003 43.7001Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M21.9998 45.1001C22.1818 45.1001 22.3638 45.0231 22.4968 44.8971C22.6228 44.7641 22.6998 44.5821 22.6998 44.4001C22.6998 44.2181 22.6228 44.0354 22.4968 43.9101C22.2378 43.6441 21.7688 43.6441 21.5028 43.9031C21.3768 44.0354 21.2998 44.2181 21.2998 44.4001C21.2998 44.5821 21.3768 44.7641 21.5028 44.8971C21.6358 45.0231 21.8178 45.1001 21.9998 45.1001Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M49.503 39.003C49.377 39.1353 49.3 39.3103 49.3 39.5C49.3 39.682 49.377 39.864 49.503 39.997C49.636 40.123 49.818 40.2 50 40.2C50.182 40.2 50.364 40.123 50.497 39.997C50.623 39.864 50.7 39.682 50.7 39.5C50.7 39.318 50.623 39.1353 50.497 39.003C50.238 38.744 49.769 38.744 49.503 39.003Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M50 29H39.5C39.1136 29 38.8 29.3129 38.8 29.7C38.8 30.0871 39.1136 30.4 39.5 30.4H50C50.3864 30.4 50.7 30.0871 50.7 29.7C50.7 29.3129 50.3864 29 50 29Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M49.9998 33.9H42.9998C42.6134 33.9 42.2998 34.2129 42.2998 34.6C42.2998 34.9871 42.6134 35.3 42.9998 35.3H49.9998C50.3862 35.3 50.6998 34.9871 50.6998 34.6C50.6998 34.2129 50.3862 33.9 49.9998 33.9Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M36.0003 35.3H37.4003C37.7867 35.3 38.1003 34.9871 38.1003 34.6C38.1003 34.2129 37.7867 33.9 37.4003 33.9H36.0003C35.6139 33.9 35.3003 34.2129 35.3003 34.6C35.3003 34.9871 35.6139 35.3 36.0003 35.3Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M36.0003 25.5H46.5003C46.8867 25.5 47.2003 25.1871 47.2003 24.8C47.2003 24.4129 46.8867 24.1 46.5003 24.1H36.0003C35.6139 24.1 35.3003 24.4129 35.3003 24.8C35.3003 25.1871 35.6139 25.5 36.0003 25.5Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M50 25.4999C50.182 25.4999 50.364 25.4229 50.497 25.2969C50.63 25.1639 50.7 24.9819 50.7 24.7999C50.7 24.6179 50.63 24.4352 50.497 24.3029C50.231 24.0439 49.762 24.0439 49.503 24.3029C49.377 24.4352 49.3 24.6179 49.3 24.7999C49.3 24.9819 49.377 25.1639 49.503 25.2969C49.636 25.4229 49.818 25.4999 50 25.4999Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M36.203 29.203C36.077 29.3353 36 29.5103 36 29.7C36 29.882 36.077 30.064 36.203 30.197C36.336 30.323 36.518 30.4 36.7 30.4C36.882 30.4 37.064 30.323 37.197 30.197C37.323 30.064 37.4 29.882 37.4 29.7C37.4 29.5103 37.323 29.3353 37.197 29.203C36.931 28.944 36.469 28.944 36.203 29.203Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M39.7028 34.1029C39.5768 34.2352 39.4998 34.4179 39.4998 34.5999C39.4998 34.7819 39.5768 34.9639 39.7028 35.0969C39.8358 35.2229 40.0178 35.2999 40.1998 35.2999C40.3818 35.2999 40.5638 35.2229 40.6968 35.0969C40.8228 34.9639 40.8998 34.7819 40.8998 34.5999C40.8998 34.4179 40.8228 34.2352 40.6968 34.1029C40.4378 33.8439 39.9618 33.8439 39.7028 34.1029Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M32.4998 24.1H21.2998V35.3H32.4998V24.1ZM31.0998 33.9H22.6998V25.5H31.0998V33.9Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+          </svg>
+          <div
+            className="MuiBox-root css-fn7pxe"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1394dv-MuiTypography-root"
+            >
+              Business Meeting
+            </p>
+            <div
+              className="MuiBox-root css-69i1ev"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body1 css-1ley7kj-MuiTypography-root"
+              >
+                500
+                 Spaces
+              </p>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1k1lh22-MuiSvgIcon-root"
+                data-testid="ArrowForwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-cj16wl-MuiPaper-root"
+        >
+          <svg
+            fill="none"
+            height="72"
+            viewBox="0 0 72 72"
+            width="72"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M54.884 38.9596L51.627 37.8736L47.2815 33.5282C47.3196 33.3572 47.3464 33.183 47.3464 33.0047V28.0676C47.3464 27.2596 46.9468 26.5076 46.2782 26.0546C45.6096 25.6015 44.7636 25.5116 44.0123 25.8106L38.9869 27.8205C38.2438 27.0044 37.1854 26.4833 35.9997 26.4833C34.8141 26.4833 33.7557 27.0044 33.0134 27.8196L27.988 25.8098C27.2375 25.5116 26.3915 25.6015 25.7221 26.0538C25.0535 26.5068 24.6539 27.2596 24.6539 28.0668V33.0039C24.6539 33.183 24.6807 33.3572 24.7188 33.5282L20.3733 37.8736L17.1163 38.9596C16.8497 39.0487 16.6487 39.2692 16.5838 39.5423C16.519 39.8154 16.6009 40.1023 16.7994 40.3016L28.2603 51.7617C28.4135 51.9157 28.6209 51.9992 28.8333 51.9992C28.8957 51.9992 28.9572 51.9919 29.0188 51.9773C29.2919 51.9125 29.5124 51.7115 29.6015 51.4448L30.6875 48.1878L35.9997 42.8763L41.312 48.1886L42.398 51.4457C42.4871 51.7123 42.7075 51.9133 42.9807 51.9781C43.0422 51.9927 43.1046 52 43.1662 52C43.3786 52 43.586 51.9165 43.7392 51.7625L55.2001 40.3008C55.3986 40.1023 55.4805 39.8146 55.4157 39.5415C55.3516 39.2684 55.1498 39.0479 54.884 38.9596ZM44.6136 27.3148C44.8665 27.2126 45.142 27.2434 45.3689 27.3958C45.5951 27.549 45.7247 27.7937 45.7247 28.0668V33.0039C45.7247 33.277 45.5951 33.5217 45.3689 33.6749C45.1428 33.8272 44.8665 33.858 44.6136 33.7559L39.8176 31.8377C39.9586 31.4268 40.0518 30.9932 40.0518 30.5353C40.0518 30.0775 39.9586 29.6439 39.8176 29.233L44.6136 27.3148ZM35.9997 28.1041C37.3402 28.1041 38.431 29.1949 38.431 30.5353C38.431 31.8758 37.3402 32.9666 35.9997 32.9666C34.6593 32.9666 33.5685 31.8758 33.5685 30.5353C33.5685 29.1949 34.6593 28.1041 35.9997 28.1041ZM26.2748 28.0668C26.2748 27.7937 26.4044 27.549 26.6305 27.3958C26.8567 27.2434 27.1338 27.2126 27.3859 27.3148L32.1819 29.233C32.0409 29.6439 31.9477 30.0775 31.9477 30.5353C31.9477 30.9932 32.0409 31.4268 32.1819 31.8377L27.3859 33.7559C27.1338 33.8572 26.8575 33.8272 26.6305 33.6749C26.4044 33.5217 26.2748 33.277 26.2748 33.0039V28.0668ZM29.9792 46.605L25.3947 42.0205L24.2487 43.1665L29.0521 47.9698L28.4791 49.6895L18.8724 40.082L21.0671 39.3502C21.1862 39.3105 21.2948 39.2432 21.3839 39.1541L25.6151 34.9229C25.6532 34.9521 25.6824 34.9894 25.7221 35.0161C26.1305 35.2925 26.6062 35.4343 27.0852 35.4343C27.3899 35.4343 27.6962 35.3768 27.9888 35.2601L33.0142 33.2502C33.7557 34.0663 34.8141 34.5874 35.9997 34.5874C36.0022 34.5874 36.0054 34.5866 36.0079 34.5866C37.2972 36.7926 36.9706 39.6136 35.1367 41.4468L29.9792 46.605ZM43.5204 49.6887L42.7886 47.4941C42.7489 47.3749 42.6816 47.2663 42.5925 47.1772L37.0711 41.655C38.6174 39.4799 38.8484 36.6167 37.666 34.2179C38.1717 33.9877 38.6158 33.6554 38.9853 33.2502L44.0107 35.2601C44.3024 35.3768 44.6088 35.4343 44.9143 35.4343C45.3933 35.4343 45.8682 35.2925 46.2774 35.0161C46.3171 34.9894 46.3471 34.9513 46.3844 34.9221L50.0426 38.5803L45.4581 43.1648L46.6048 44.3124L51.4082 39.5091L53.1279 40.082L43.5204 49.6887Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M44.3121 44.3125L43.166 45.4586L44.3121 46.6047L45.4582 45.4586L44.3121 44.3125Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M23.1026 39.7277L21.9565 40.8738L23.1026 42.0199L24.2487 40.8738L23.1026 39.7277Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M23.0333 30.5354V24.0521C23.0333 21.8178 21.2155 20 18.9812 20C17.0006 20 15.3473 21.4288 14.9972 23.3097C13.1163 23.6598 11.6875 25.3131 11.6875 27.2937C11.6875 29.528 13.5053 31.3458 15.7396 31.3458H22.2229C22.6702 31.3458 23.0333 30.9827 23.0333 30.5354ZM21.4125 29.725H15.7396C14.3991 29.725 13.3083 28.6342 13.3083 27.2937C13.3083 25.9533 14.3991 24.8625 15.7396 24.8625C16.1869 24.8625 16.55 24.4994 16.55 24.0521C16.55 22.7116 17.6408 21.6208 18.9812 21.6208C20.3217 21.6208 21.4125 22.7116 21.4125 24.0521V29.725Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M57.0029 23.3097C56.6528 21.4288 54.9995 20 53.0189 20C50.7846 20 48.9668 21.8178 48.9668 24.0521V30.5354C48.9668 30.9827 49.3299 31.3458 49.7772 31.3458H56.2605C58.4948 31.3458 60.3126 29.528 60.3126 27.2937C60.3126 25.3131 58.8838 23.6598 57.0029 23.3097ZM56.2605 29.725H50.5876V24.0521C50.5876 22.7116 51.6784 21.6208 53.0189 21.6208C54.3593 21.6208 55.4501 22.7116 55.4501 24.0521C55.4501 24.4994 55.8132 24.8625 56.2605 24.8625C57.601 24.8625 58.6918 25.9533 58.6918 27.2937C58.6918 28.6342 57.601 29.725 56.2605 29.725Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+          </svg>
+          <div
+            className="MuiBox-root css-fn7pxe"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1394dv-MuiTypography-root"
+            >
+              Wedding
+            </p>
+            <div
+              className="MuiBox-root css-69i1ev"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body1 css-1ley7kj-MuiTypography-root"
+              >
+                400
+                 Spaces
+              </p>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1k1lh22-MuiSvgIcon-root"
+                data-testid="ArrowForwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-cj16wl-MuiPaper-root"
+        >
+          <svg
+            fill="none"
+            height="72"
+            viewBox="0 0 72 72"
+            width="72"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.943 40.445H21.9035V40.538L15 57.0001L45.3832 44.2583L27.7418 26.6169L21.943 40.445ZM32.4325 47.7864L28.9228 49.2578V30.2793L32.4325 33.7889V47.7864ZM34.1873 35.5438L37.697 39.0534V45.5788L34.1873 47.0502V35.5438ZM27.168 49.9939L23.6583 51.4654V40.8916L27.168 32.522V49.9939ZM21.9035 45.076V52.2015L18.278 53.7221L21.9035 45.076ZM39.4518 44.8426V40.8083L42.2947 43.6511L39.4518 44.8426Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M37.6974 22.0193C35.7618 22.0193 34.1877 23.5934 34.1877 25.529C34.1877 27.4645 35.7618 29.0386 37.6974 29.0386C39.633 29.0386 41.2071 27.4645 41.2071 25.529C41.2071 23.5934 39.633 22.0193 37.6974 22.0193ZM37.6974 27.2838C36.7296 27.2838 35.9426 26.4967 35.9426 25.529C35.9426 24.5612 36.7296 23.7741 37.6974 23.7741C38.6652 23.7741 39.4522 24.5612 39.4522 25.529C39.4522 26.4967 38.6652 27.2838 37.6974 27.2838Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M53.4904 15C51.5548 15 49.9807 16.5741 49.9807 18.5097C49.9807 20.4452 51.5548 22.0193 53.4904 22.0193C55.426 22.0193 57 20.4452 57 18.5097C57 16.5741 55.426 15 53.4904 15ZM53.4904 20.2645C52.5226 20.2645 51.7355 19.4775 51.7355 18.5097C51.7355 17.5419 52.5226 16.7548 53.4904 16.7548C54.4582 16.7548 55.2452 17.5419 55.2452 18.5097C55.2452 19.4775 54.4582 20.2645 53.4904 20.2645Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M49.1037 29.0386C47.1681 29.0386 45.594 30.6127 45.594 32.5482C45.594 34.4838 47.1681 36.0579 49.1037 36.0579C51.0392 36.0579 52.6133 34.4838 52.6133 32.5482C52.6133 30.6127 51.0392 29.0386 49.1037 29.0386ZM49.1037 34.3031C48.1359 34.3031 47.3488 33.516 47.3488 32.5482C47.3488 31.5804 48.1359 30.7934 49.1037 30.7934C50.0714 30.7934 50.8585 31.5804 50.8585 32.5482C50.8585 33.516 50.0714 34.3031 49.1037 34.3031Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M45.4253 41.0364L46.666 42.2771C49.1017 39.8414 53.0667 39.8414 55.5024 42.2771L56.7431 41.0364C53.6221 37.9154 48.5454 37.9154 45.4253 41.0364Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M30.4206 27.0267C32.8151 24.6323 32.8151 20.7357 30.4206 18.3412L29.1799 19.5819C30.89 21.2928 30.89 24.076 29.1799 25.7861L30.4206 27.0267Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M45.3369 26.8145C48.5815 23.5689 48.5815 18.2895 45.3369 15.0439L44.0962 16.2846C46.6565 18.8458 46.6565 23.0126 44.0962 25.5738L45.3369 26.8145Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M40.3293 31.6708H38.5745V33.4256H40.3293V31.6708Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M54.3681 24.6515H52.6133V26.4063H54.3681V24.6515Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+            <path
+              d="M36.8198 16.7549H35.0649V18.5097H36.8198V16.7549Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+          </svg>
+          <div
+            className="MuiBox-root css-fn7pxe"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1394dv-MuiTypography-root"
+            >
+              Party
+            </p>
+            <div
+              className="MuiBox-root css-69i1ev"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body1 css-1ley7kj-MuiTypography-root"
+              >
+                300
+                 Spaces
+              </p>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1k1lh22-MuiSvgIcon-root"
+                data-testid="ArrowForwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-cj16wl-MuiPaper-root"
+        >
+          <svg
+            fill="none"
+            height="72"
+            viewBox="0 0 72 72"
+            width="72"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M44.75 19.375C44.75 16.9626 42.7874 15 40.375 15H31.625C29.2126 15 27.25 16.9626 27.25 19.375V22H15V36.875H16.75V57H55.25V36.875H57V22H44.75V19.375ZM29 19.375C29 17.9277 30.1777 16.75 31.625 16.75H40.375C41.8223 16.75 43 17.9277 43 19.375V22H29V19.375ZM18.5 50.9538C20.6936 51.3239 22.4253 53.0564 22.7962 55.25H18.5V50.9538ZM49.2038 55.25C49.5739 53.0564 51.3064 51.3247 53.5 50.9538V55.25H49.2038ZM53.5 49.1854C50.3395 49.5817 47.8326 52.0895 47.4354 55.25H24.5646C24.1674 52.0895 21.6605 49.5826 18.5 49.1854V36.875H30.75V42.125H35.125V43.875H36.875V42.125H41.25V36.875H53.5V49.1854ZM35.125 38.625V40.375H32.5V36.875H39.5V40.375H36.875V38.625H35.125ZM55.25 35.125H41.25H30.75H16.75V23.75H55.25V35.125Z"
+              fill="#111827"
+              stroke="#111827"
+            />
+          </svg>
+          <div
+            className="MuiBox-root css-fn7pxe"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1394dv-MuiTypography-root"
+            >
+              Work Space
+            </p>
+            <div
+              className="MuiBox-root css-69i1ev"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body1 css-1ley7kj-MuiTypography-root"
+              >
+                200
+                 Spaces
+              </p>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1k1lh22-MuiSvgIcon-root"
+                data-testid="ArrowForwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1e0n686-MuiContainer-root"
+  >
+    <div
+      className="MuiBox-root css-9urbrp"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-1sax0vg-MuiTypography-root"
+      >
+        Most Popular Locations
+      </h4>
+      <button
+        className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-eyahqw-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        See All
+      </button>
+    </div>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1er8d9d-MuiTypography-root"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget turpis a vel ac odio velit. Nulla lorem id blandit amet.
+    </p>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-10voxkt-MuiGrid-root"
+      >
+        <div
+          className="MuiCardMedia-root css-dkvys2-MuiCardMedia-root"
+          role="img"
+          style={
+            Object {
+              "backgroundImage": "url(\\"/nairobi-loaction.jpg\\")",
+            }
+          }
+        >
+          <div
+            className="MuiBox-root css-1uvucr7"
+          >
+            <svg
+              fill="none"
+              height="40"
+              viewBox="0 0 34 40"
+              width="34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5686 34.7938L25.6812 25.6811C27.4833 23.8788 28.7105 21.5826 29.2077 19.0829C29.7048 16.5832 29.4495 13.9922 28.4741 11.6375C27.4987 9.28287 25.847 7.27033 23.7278 5.85438C21.6087 4.43844 19.1172 3.68268 16.5686 3.68268C14.0199 3.68268 11.5284 4.43844 9.40925 5.85438C7.29008 7.27033 5.63837 9.28287 4.66297 11.6375C3.68757 13.9922 3.4323 16.5832 3.92942 19.0829C4.42655 21.5826 5.65375 23.8788 7.45585 25.6811L16.5686 34.7938ZM16.5686 40L4.85275 28.2842C2.53562 25.967 0.957637 23.0148 0.318353 19.8008C-0.320932 16.5869 0.0071923 13.2555 1.26123 10.228C2.51527 7.20049 4.6389 4.61285 7.36358 2.79229C10.0883 0.971723 13.2916 0 16.5686 0C19.8455 0 23.0488 0.971723 25.7735 2.79229C28.4982 4.61285 30.6218 7.20049 31.8759 10.228C33.1299 13.2555 33.458 16.5869 32.8187 19.8008C32.1795 23.0148 30.6015 25.967 28.2844 28.2842L16.5686 40ZM16.5686 20.2503C17.545 20.2503 18.4816 19.8624 19.172 19.1719C19.8625 18.4814 20.2504 17.5449 20.2504 16.5684C20.2504 15.5919 19.8625 14.6554 19.172 13.9649C18.4816 13.2744 17.545 12.8865 16.5686 12.8865C15.592 12.8865 14.6555 13.2744 13.9651 13.9649C13.2746 14.6554 12.8867 15.5919 12.8867 16.5684C12.8867 17.5449 13.2746 18.4814 13.9651 19.1719C14.6555 19.8624 15.592 20.2503 16.5686 20.2503ZM16.5686 23.9322C14.6155 23.9322 12.7425 23.1564 11.3616 21.7754C9.98058 20.3944 9.20475 18.5214 9.20475 16.5684C9.20475 14.6154 9.98058 12.7424 11.3616 11.3614C12.7425 9.98043 14.6155 9.2046 16.5686 9.2046C18.5215 9.2046 20.3946 9.98043 21.7755 11.3614C23.1565 12.7424 23.9323 14.6154 23.9323 16.5684C23.9323 18.5214 23.1565 20.3944 21.7755 21.7754C20.3946 23.1564 18.5215 23.9322 16.5686 23.9322Z"
+                fill="#F27956"
+              />
+            </svg>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-ee2a3d-MuiTypography-root"
+            >
+              Nairobi
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1qf41gp-MuiTypography-root"
+            >
+              8km
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-10voxkt-MuiGrid-root"
+      >
+        <div
+          className="MuiCardMedia-root css-dkvys2-MuiCardMedia-root"
+          role="img"
+          style={
+            Object {
+              "backgroundImage": "url(\\"/kisumu-location.jpg\\")",
+            }
+          }
+        >
+          <div
+            className="MuiBox-root css-1uvucr7"
+          >
+            <svg
+              fill="none"
+              height="40"
+              viewBox="0 0 34 40"
+              width="34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5686 34.7938L25.6812 25.6811C27.4833 23.8788 28.7105 21.5826 29.2077 19.0829C29.7048 16.5832 29.4495 13.9922 28.4741 11.6375C27.4987 9.28287 25.847 7.27033 23.7278 5.85438C21.6087 4.43844 19.1172 3.68268 16.5686 3.68268C14.0199 3.68268 11.5284 4.43844 9.40925 5.85438C7.29008 7.27033 5.63837 9.28287 4.66297 11.6375C3.68757 13.9922 3.4323 16.5832 3.92942 19.0829C4.42655 21.5826 5.65375 23.8788 7.45585 25.6811L16.5686 34.7938ZM16.5686 40L4.85275 28.2842C2.53562 25.967 0.957637 23.0148 0.318353 19.8008C-0.320932 16.5869 0.0071923 13.2555 1.26123 10.228C2.51527 7.20049 4.6389 4.61285 7.36358 2.79229C10.0883 0.971723 13.2916 0 16.5686 0C19.8455 0 23.0488 0.971723 25.7735 2.79229C28.4982 4.61285 30.6218 7.20049 31.8759 10.228C33.1299 13.2555 33.458 16.5869 32.8187 19.8008C32.1795 23.0148 30.6015 25.967 28.2844 28.2842L16.5686 40ZM16.5686 20.2503C17.545 20.2503 18.4816 19.8624 19.172 19.1719C19.8625 18.4814 20.2504 17.5449 20.2504 16.5684C20.2504 15.5919 19.8625 14.6554 19.172 13.9649C18.4816 13.2744 17.545 12.8865 16.5686 12.8865C15.592 12.8865 14.6555 13.2744 13.9651 13.9649C13.2746 14.6554 12.8867 15.5919 12.8867 16.5684C12.8867 17.5449 13.2746 18.4814 13.9651 19.1719C14.6555 19.8624 15.592 20.2503 16.5686 20.2503ZM16.5686 23.9322C14.6155 23.9322 12.7425 23.1564 11.3616 21.7754C9.98058 20.3944 9.20475 18.5214 9.20475 16.5684C9.20475 14.6154 9.98058 12.7424 11.3616 11.3614C12.7425 9.98043 14.6155 9.2046 16.5686 9.2046C18.5215 9.2046 20.3946 9.98043 21.7755 11.3614C23.1565 12.7424 23.9323 14.6154 23.9323 16.5684C23.9323 18.5214 23.1565 20.3944 21.7755 21.7754C20.3946 23.1564 18.5215 23.9322 16.5686 23.9322Z"
+                fill="#F27956"
+              />
+            </svg>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-ee2a3d-MuiTypography-root"
+            >
+              Kisumu
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1qf41gp-MuiTypography-root"
+            >
+              398km
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-10voxkt-MuiGrid-root"
+      >
+        <div
+          className="MuiCardMedia-root css-dkvys2-MuiCardMedia-root"
+          role="img"
+          style={
+            Object {
+              "backgroundImage": "url(\\"/mombasa-location.jpg\\")",
+            }
+          }
+        >
+          <div
+            className="MuiBox-root css-1uvucr7"
+          >
+            <svg
+              fill="none"
+              height="40"
+              viewBox="0 0 34 40"
+              width="34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5686 34.7938L25.6812 25.6811C27.4833 23.8788 28.7105 21.5826 29.2077 19.0829C29.7048 16.5832 29.4495 13.9922 28.4741 11.6375C27.4987 9.28287 25.847 7.27033 23.7278 5.85438C21.6087 4.43844 19.1172 3.68268 16.5686 3.68268C14.0199 3.68268 11.5284 4.43844 9.40925 5.85438C7.29008 7.27033 5.63837 9.28287 4.66297 11.6375C3.68757 13.9922 3.4323 16.5832 3.92942 19.0829C4.42655 21.5826 5.65375 23.8788 7.45585 25.6811L16.5686 34.7938ZM16.5686 40L4.85275 28.2842C2.53562 25.967 0.957637 23.0148 0.318353 19.8008C-0.320932 16.5869 0.0071923 13.2555 1.26123 10.228C2.51527 7.20049 4.6389 4.61285 7.36358 2.79229C10.0883 0.971723 13.2916 0 16.5686 0C19.8455 0 23.0488 0.971723 25.7735 2.79229C28.4982 4.61285 30.6218 7.20049 31.8759 10.228C33.1299 13.2555 33.458 16.5869 32.8187 19.8008C32.1795 23.0148 30.6015 25.967 28.2844 28.2842L16.5686 40ZM16.5686 20.2503C17.545 20.2503 18.4816 19.8624 19.172 19.1719C19.8625 18.4814 20.2504 17.5449 20.2504 16.5684C20.2504 15.5919 19.8625 14.6554 19.172 13.9649C18.4816 13.2744 17.545 12.8865 16.5686 12.8865C15.592 12.8865 14.6555 13.2744 13.9651 13.9649C13.2746 14.6554 12.8867 15.5919 12.8867 16.5684C12.8867 17.5449 13.2746 18.4814 13.9651 19.1719C14.6555 19.8624 15.592 20.2503 16.5686 20.2503ZM16.5686 23.9322C14.6155 23.9322 12.7425 23.1564 11.3616 21.7754C9.98058 20.3944 9.20475 18.5214 9.20475 16.5684C9.20475 14.6154 9.98058 12.7424 11.3616 11.3614C12.7425 9.98043 14.6155 9.2046 16.5686 9.2046C18.5215 9.2046 20.3946 9.98043 21.7755 11.3614C23.1565 12.7424 23.9323 14.6154 23.9323 16.5684C23.9323 18.5214 23.1565 20.3944 21.7755 21.7754C20.3946 23.1564 18.5215 23.9322 16.5686 23.9322Z"
+                fill="#F27956"
+              />
+            </svg>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-ee2a3d-MuiTypography-root"
+            >
+              Mombasa
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1qf41gp-MuiTypography-root"
+            >
+              468km
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-10voxkt-MuiGrid-root"
+      >
+        <div
+          className="MuiCardMedia-root css-dkvys2-MuiCardMedia-root"
+          role="img"
+          style={
+            Object {
+              "backgroundImage": "url(\\"/marsabit-location.jpg\\")",
+            }
+          }
+        >
+          <div
+            className="MuiBox-root css-1uvucr7"
+          >
+            <svg
+              fill="none"
+              height="40"
+              viewBox="0 0 34 40"
+              width="34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.5686 34.7938L25.6812 25.6811C27.4833 23.8788 28.7105 21.5826 29.2077 19.0829C29.7048 16.5832 29.4495 13.9922 28.4741 11.6375C27.4987 9.28287 25.847 7.27033 23.7278 5.85438C21.6087 4.43844 19.1172 3.68268 16.5686 3.68268C14.0199 3.68268 11.5284 4.43844 9.40925 5.85438C7.29008 7.27033 5.63837 9.28287 4.66297 11.6375C3.68757 13.9922 3.4323 16.5832 3.92942 19.0829C4.42655 21.5826 5.65375 23.8788 7.45585 25.6811L16.5686 34.7938ZM16.5686 40L4.85275 28.2842C2.53562 25.967 0.957637 23.0148 0.318353 19.8008C-0.320932 16.5869 0.0071923 13.2555 1.26123 10.228C2.51527 7.20049 4.6389 4.61285 7.36358 2.79229C10.0883 0.971723 13.2916 0 16.5686 0C19.8455 0 23.0488 0.971723 25.7735 2.79229C28.4982 4.61285 30.6218 7.20049 31.8759 10.228C33.1299 13.2555 33.458 16.5869 32.8187 19.8008C32.1795 23.0148 30.6015 25.967 28.2844 28.2842L16.5686 40ZM16.5686 20.2503C17.545 20.2503 18.4816 19.8624 19.172 19.1719C19.8625 18.4814 20.2504 17.5449 20.2504 16.5684C20.2504 15.5919 19.8625 14.6554 19.172 13.9649C18.4816 13.2744 17.545 12.8865 16.5686 12.8865C15.592 12.8865 14.6555 13.2744 13.9651 13.9649C13.2746 14.6554 12.8867 15.5919 12.8867 16.5684C12.8867 17.5449 13.2746 18.4814 13.9651 19.1719C14.6555 19.8624 15.592 20.2503 16.5686 20.2503ZM16.5686 23.9322C14.6155 23.9322 12.7425 23.1564 11.3616 21.7754C9.98058 20.3944 9.20475 18.5214 9.20475 16.5684C9.20475 14.6154 9.98058 12.7424 11.3616 11.3614C12.7425 9.98043 14.6155 9.2046 16.5686 9.2046C18.5215 9.2046 20.3946 9.98043 21.7755 11.3614C23.1565 12.7424 23.9323 14.6154 23.9323 16.5684C23.9323 18.5214 23.1565 20.3944 21.7755 21.7754C20.3946 23.1564 18.5215 23.9322 16.5686 23.9322Z"
+                fill="#F27956"
+              />
+            </svg>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-ee2a3d-MuiTypography-root"
+            >
+              Marsabit
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1qf41gp-MuiTypography-root"
+            >
+              379km
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1nm3jrn-MuiContainer-root"
+  >
+    <div
+      className="MuiBox-root css-w6et2v"
+    >
+      <div
+        className="MuiBox-root css-13af3fo"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ync187-MuiTypography-root"
+        >
+          WHY US?
+        </p>
+        <h4
+          className="MuiTypography-root MuiTypography-h4 css-kg449z-MuiTypography-root"
+        >
+          Book a space seamlessly
+        </h4>
+      </div>
+    </div>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-2lhcu-MuiTypography-root"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus a placerat vulputate commodo, tincidunt tincidunt phasellus etiam donec. Quis varius ut scelerisque dictum. Consequat tellus et eleifend consectetur in enim nullam odio rutrum. Consectetur id feugiat orci, purus scelerisque vitae mauris odio est.
+       
+    </p>
+    <div
+      className="MuiGrid-root MuiGrid-container css-oomdd2-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-11l5t4l-MuiGrid-root"
+      >
+        <div
+          className="tiles MuiBox-root css-1eiun1d"
+        >
+          <img
+            alt="Easy Navigation"
+            src="/icons/easy-nav.svg"
+          />
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ry679h-MuiTypography-root"
+          >
+            Easy Navigation
+          </h6>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-11l5t4l-MuiGrid-root"
+      >
+        <div
+          className="tiles MuiBox-root css-1eiun1d"
+        >
+          <img
+            alt="Top Locations"
+            src="/icons/top-locations.svg"
+          />
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ry679h-MuiTypography-root"
+          >
+            Top Locations
+          </h6>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-11l5t4l-MuiGrid-root"
+      >
+        <div
+          className="tiles MuiBox-root css-1eiun1d"
+        >
+          <img
+            alt="Fast Booking"
+            src="/icons/fast-booking.svg"
+          />
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ry679h-MuiTypography-root"
+          >
+            Fast Booking
+          </h6>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-11l5t4l-MuiGrid-root"
+      >
+        <div
+          className="tiles MuiBox-root css-1eiun1d"
+        >
+          <img
+            alt="Many Listings"
+            src="/icons/many-listings.svg"
+          />
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ry679h-MuiTypography-root"
+          >
+            Many Listings
+          </h6>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-11l5t4l-MuiGrid-root"
+      >
+        <div
+          className="tiles MuiBox-root css-1eiun1d"
+        >
+          <img
+            alt="Super Hosts"
+            src="/icons/super-hosts.svg"
+          />
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ry679h-MuiTypography-root"
+          >
+            Super Hosts
+          </h6>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 css-11l5t4l-MuiGrid-root"
+      >
+        <div
+          className="tiles MuiBox-root css-1eiun1d"
+        >
+          <img
+            alt="Ample Support"
+            src="/icons/ample-support.svg"
+          />
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ry679h-MuiTypography-root"
+          >
+            Ample Support
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1mgb1a6-MuiContainer-root"
+  >
+    <div
+      className="MuiBox-root css-9urbrp"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-1sax0vg-MuiTypography-root"
+      >
+        Get More Insights From our Blog
+      </h4>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
+      >
+        <div
+          className="MuiBox-root css-1nuarjr"
+        >
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-u1j1su-MuiTypography-root"
+          >
+            HOSTING
+          </p>
+          <h5
+            className="MuiTypography-root MuiTypography-h5 css-1xei5rn-MuiTypography-root"
+          >
+            How to get your first booking
+          </h5>
+          <button
+            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-nob4m8-MuiButtonBase-root-MuiButton-root"
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Read More
+          </button>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
+      >
+        <div
+          className="MuiBox-root css-1mtdnye"
+        >
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-u1j1su-MuiTypography-root"
+          >
+            GUEST
+          </p>
+          <h5
+            className="MuiTypography-root MuiTypography-h5 css-1xei5rn-MuiTypography-root"
+          >
+            Top 10 locations to choose for your upcoming wedding
+          </h5>
+          <button
+            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-nob4m8-MuiButtonBase-root-MuiButton-root"
+            disabled={false}
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Read More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-svszms-MuiContainer-root"
+  >
+    <div
+      className="MuiBox-root css-b4dk6w"
+    />
+    <div
+      className="MuiBox-root css-125catw"
+    />
+    <div
+      className="MuiCardMedia-root css-egyu3s-MuiCardMedia-root"
+      role="img"
+      style={
+        Object {
+          "backgroundImage": "url(\\"/Saly-14.png\\")",
+        }
+      }
+    />
+    <div
+      className="MuiBox-root css-1itjy3s"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-v9d3am-MuiTypography-root"
+      >
+        Would you like to know more about us?
+      </h4>
+      <div
+        className="MuiBox-root css-146q31f"
+      >
+        <button
+          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-btwse6-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Contact Agent
+        </button>
+        <button
+          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-19gdtk0-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Visit Help Center
+        </button>
+      </div>
+    </div>
+    <div
+      className="MuiBox-root css-u1ikvf"
+    />
+  </div>
+</div>
+`;
