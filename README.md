@@ -1,3 +1,5 @@
+![Development workflow](https://github.com/b0nbon1/findyspace/actions/workflows/dev.workflow.yml/badge.svg)
+
 # FindySpace - Making event spaces bookings easy and convinient.
 
 ## Vision
@@ -34,7 +36,7 @@ Revolutionize event spaces booking experience
 #### Run the app 🌋
 - use docker instructions for running servers
 
-       
+
 ## Deployment 🚀🚀
 
 This app will be deployed on heroku, To access this app go to these link:

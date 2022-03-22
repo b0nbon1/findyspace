@@ -12,7 +12,7 @@ import { AuthLoginDto } from './dto/auth-login.dto';
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { SocialLoginDto } from './dto/socials-login.dto';
-import { TransformInterceptor } from 'src/utils/transform.interceptor';
+import { TransformInterceptor } from '../utils/transform.interceptor';
 
 @Controller({
   version: '1',
