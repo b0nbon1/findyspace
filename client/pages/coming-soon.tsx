@@ -54,7 +54,7 @@ function Home() {
           height: { xs: 'auto', sm: '100vh' },
         }}
       >
-        <Box component="header" sx={{ ml: 3, mt: 3 }}>
+        <Box component="header" sx={{ ml: 3, my: 3 }}>
           <Image width={200} height="50" src="/main-logo.png" />
         </Box>
         <Box sx={{
