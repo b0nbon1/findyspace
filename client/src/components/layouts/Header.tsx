@@ -12,7 +12,7 @@ import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 import { AppBarStyled, BecomeHost, Seperator, ToolbarStyled } from './styles';
-import FindySpaceLogo from './FindySpaceLogo';
+import AuthCard from '../authentication/AuthCard';
 
 export interface HeaderProps {
   title?: string | undefined;
@@ -23,6 +23,7 @@ function Header({ description, title }: HeaderProps) {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null,
   );
+  const [openAuth, setOpenAuth] = React.useState(false);
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -40,7 +41,9 @@ function Header({ description, title }: HeaderProps) {
       <AppBarStyled elevation={0} position="static">
         <Container maxWidth="xl">
           <ToolbarStyled>
-            <FindySpaceLogo />
+            <Box sx={{ flex: 1, my: 1 }}>
+              <img src="/main-logo.png" alt="logo" width="150" />
+            </Box>
             <Box
               display="flex"
               alignItems="center"
@@ -50,8 +53,10 @@ function Header({ description, title }: HeaderProps) {
                 Become A Host
               </BecomeHost>
               <Seperator sx={{ mx: 1 }} />
-              <Button sx={{ mx: 1 }}>Sign Up</Button>
-              <Button variant="contained" sx={{ mx: 1 }}>
+              <Button sx={{ mx: 1 }} onClick={() => setOpenAuth(true)}>
+                Sign Up
+              </Button>
+              <Button variant="contained" sx={{ mx: 1, borderRadius: '4px' }}>
                 Log In
               </Button>
             </Box>
@@ -123,6 +128,7 @@ function Header({ description, title }: HeaderProps) {
           </ToolbarStyled>
         </Container>
       </AppBarStyled>
+      <AuthCard open={openAuth} handleClose={() => setOpenAuth(false)} />
     </>
   );
 }
