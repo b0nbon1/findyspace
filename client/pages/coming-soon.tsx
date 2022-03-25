@@ -43,6 +43,7 @@ function Home() {
         <title>
           Findyspace | Coming Soon | Explore event spaces, meeting places and workspaces near you
         </title>
+        <meta name="keywords" content={['findy', 'findyspace', 'space', 'event locations', 'co-working spaces'].join(',')} />
         <meta name="description" content="findyspace or findmyspace Africa app is used to explore spaces in Kenya and East Africa. Explore events, meeting, fun locations available" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -54,7 +55,7 @@ function Home() {
         }}
       >
         <Box component="header" sx={{ ml: 3, mt: 3 }}>
-          <Image width={110} height={25} src="/findyspace.png" />
+          <Image width={200} height="50" src="/main-logo.png" />
         </Box>
         <Box sx={{
           position: 'absolute',
