@@ -12,6 +12,7 @@ import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 import { AppBarStyled, BecomeHost, Seperator, ToolbarStyled } from './styles';
+import FindySpaceLogo from './FindySpaceLogo';
 
 export interface HeaderProps {
   title?: string | undefined;
@@ -39,7 +40,7 @@ function Header({ description, title }: HeaderProps) {
       <AppBarStyled elevation={0} position="static">
         <Container maxWidth="xl">
           <ToolbarStyled>
-            <Typography sx={{ flexGrow: 1 }}>FindySpace</Typography>
+            <FindySpaceLogo />
             <Box
               display="flex"
               alignItems="center"
@@ -77,7 +78,12 @@ function Header({ description, title }: HeaderProps) {
                 >
                   <path
                     d="M2 2.66675H14V4.00008H2V2.66675ZM6 7.33341H14V8.66675H6V7.33341ZM2 12.0001H14V13.3334H2V12.0001Z"
-                    fill="#4C5567"
+                    fill="#4      elevation={2}
+                    sx={{
+                    borderRadius: '.5rem',
+                    width: { xs: '100%', sm: '100%', md: '55%' },
+                    order: { xs: 1, sm: 1, md: 2 },
+                    }C5567"
                   />
                 </svg>
               )}
