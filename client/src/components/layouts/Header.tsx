@@ -12,7 +12,7 @@ import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 import { AppBarStyled, BecomeHost, Seperator, ToolbarStyled } from './styles';
-import FindySpaceLogo from './FindySpaceLogo';
+import AuthCard from '../authentication/AuthCard';
 
 export interface HeaderProps {
   title?: string | undefined;
@@ -23,8 +23,18 @@ function Header({ description, title }: HeaderProps) {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null,
   );
+  const [openSignup, setOpenSignup] = React.useState(false);
+  const [openLogin, setOpenLogin] = React.useState(false);
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const handleOpenSignup = () => {
+    setOpenLogin(false);
+    setOpenSignup(true);
+  };
+  const handleOpenLogin = () => {
+    setOpenSignup(false);
+    setOpenLogin(true);
   };
   const handleOpenMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -40,7 +50,9 @@ function Header({ description, title }: HeaderProps) {
       <AppBarStyled elevation={0} position="static">
         <Container maxWidth="xl">
           <ToolbarStyled>
-            <FindySpaceLogo />
+            <Box sx={{ flex: 1, my: 1 }}>
+              <img src="/main-logo.png" alt="logo" width="150" />
+            </Box>
             <Box
               display="flex"
               alignItems="center"
@@ -50,8 +62,14 @@ function Header({ description, title }: HeaderProps) {
                 Become A Host
               </BecomeHost>
               <Seperator sx={{ mx: 1 }} />
-              <Button sx={{ mx: 1 }}>Sign Up</Button>
-              <Button variant="contained" sx={{ mx: 1 }}>
+              <Button sx={{ mx: 1 }} onClick={() => setOpenSignup(true)}>
+                Sign Up
+              </Button>
+              <Button
+                variant="contained"
+                sx={{ mx: 1, borderRadius: '4px' }}
+                onClick={() => setOpenLogin(true)}
+              >
                 Log In
               </Button>
             </Box>
@@ -78,12 +96,7 @@ function Header({ description, title }: HeaderProps) {
                 >
                   <path
                     d="M2 2.66675H14V4.00008H2V2.66675ZM6 7.33341H14V8.66675H6V7.33341ZM2 12.0001H14V13.3334H2V12.0001Z"
-                    fill="#4      elevation={2}
-                    sx={{
-                    borderRadius: '.5rem',
-                    width: { xs: '100%', sm: '100%', md: '55%' },
-                    order: { xs: 1, sm: 1, md: 2 },
-                    }C5567"
+                    fill="#4C5567"
                   />
                 </svg>
               )}
@@ -123,6 +136,18 @@ function Header({ description, title }: HeaderProps) {
           </ToolbarStyled>
         </Container>
       </AppBarStyled>
+      <AuthCard
+        isLogin={false}
+        open={openSignup}
+        handleClose={() => setOpenSignup(false)}
+        handleAuth={handleOpenLogin}
+      />
+      <AuthCard
+        isLogin
+        open={openLogin}
+        handleClose={() => setOpenLogin(false)}
+        handleAuth={handleOpenSignup}
+      />
     </>
   );
 }
