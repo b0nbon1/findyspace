@@ -12,6 +12,7 @@ import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { AppBarStyled, BecomeHost, Seperator, ToolbarStyled } from './styles';
 import AuthCard from '../authentication/AuthCard';
 
@@ -21,6 +22,8 @@ export interface HeaderProps {
 }
 
 function Header({ description, title }: HeaderProps) {
+  const router = useRouter();
+  console.log(router.pathname);
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null,
   );
@@ -66,10 +69,16 @@ function Header({ description, title }: HeaderProps) {
               alignItems="center"
               sx={{ display: { xs: 'none', md: 'flex' } }}
             >
-              <BecomeHost sx={{ mx: 1 }} variant="outlined">
-                Become A Host
-              </BecomeHost>
-              <Seperator sx={{ mx: 1 }} />
+              {router.pathname !== '/space-owner' && (
+                <>
+                  <Link href="/space-owner">
+                    <BecomeHost sx={{ mx: 1 }} variant="outlined">
+                      Become A Host
+                    </BecomeHost>
+                  </Link>
+                  <Seperator sx={{ mx: 1 }} />
+                </>
+              )}
               <Button sx={{ mx: 1 }} onClick={() => setOpenSignup(true)}>
                 Sign Up
               </Button>
