@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import firestore from '../../utils/firestore';
+import firestore from '../../src/utils/firestore';
 
 type Data = {
   message: string;

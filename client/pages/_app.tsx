@@ -1,13 +1,15 @@
 import React from 'react';
+import { ApolloProvider } from '@apollo/client';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 
 import Head from 'next/head';
 import { SnackbarProvider } from 'notistack';
-import createEmotionCache from '../utils/createEmotionCache';
+import createEmotionCache from '../src/utils/createEmotionCache';
 import theme from '../src/styles/theme';
 import '../src/styles/globals.css';
 import MainLayout from '../src/components/layouts/MainLayout';
+import client from '../src/utils/client';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -21,17 +23,19 @@ function MyApp(props: any) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <SnackbarProvider
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          maxSnack={3}
-        >
-          <MainLayout>
-            <Component {...pageProps} />
-          </MainLayout>
-        </SnackbarProvider>
+        <ApolloProvider client={client}>
+          <SnackbarProvider
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            maxSnack={3}
+          >
+            <MainLayout>
+              <Component {...pageProps} />
+            </MainLayout>
+          </SnackbarProvider>
+        </ApolloProvider>
       </ThemeProvider>
     </CacheProvider>
   );

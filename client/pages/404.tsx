@@ -1,19 +1,19 @@
 import React from 'react';
-import { Box, CardMedia, Container, Typography } from '@mui/material';
+import { Box, CardMedia, Container, Link, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
 import Head from 'next/head';
 
-const BackButton = styled(Button)({
+const BackButton = styled(Link)({
   boxShadow: 'none',
   textTransform: 'none',
-  borderRadius: '4px',
+  borderRadius: '5px',
   fontSize: 16,
   padding: '12px 12px',
   margin: '32px auto',
   border: '1px solid',
   lineHeight: 1.5,
   backgroundColor: '#5D33D5',
+  textDecoration: 'none',
   color: '#F9F9FA',
   '&:hover': {
     backgroundColor: '#5D33D2',
@@ -95,7 +95,7 @@ function Page404() {
               >
                 Error 404 Page Not Found
               </Typography>
-              <BackButton>Back to Home Page</BackButton>
+              <BackButton href="/">Back to Home Page</BackButton>
             </Box>
           </Box>
         </Container>

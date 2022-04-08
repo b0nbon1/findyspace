@@ -11,6 +11,7 @@ import {
 import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
+import Link from 'next/link';
 import { AppBarStyled, BecomeHost, Seperator, ToolbarStyled } from './styles';
 import AuthCard from '../authentication/AuthCard';
 
@@ -51,7 +52,14 @@ function Header({ description, title }: HeaderProps) {
         <Container maxWidth="xl">
           <ToolbarStyled>
             <Box sx={{ flex: 1, my: 1 }}>
-              <img src="/main-logo.png" alt="logo" width="150" />
+              <Link href="/">
+                <img
+                  src="/main-logo.png"
+                  style={{ cursor: 'pointer' }}
+                  alt="logo"
+                  width="150"
+                />
+              </Link>
             </Box>
             <Box
               display="flex"

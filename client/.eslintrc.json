@@ -55,7 +55,9 @@
         "import/prefer-default-export": "off",
         "object-curly-newline": "off",
         "react/jsx-one-expression-per-line": "off",
-        "operator-linebreak": ["error", "after"],
+        "class-methods-use-this": "off",
+        "implicit-arrow-linebreak": "off",
+        "operator-linebreak": "off",
         "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx", "**/*.spec.tsx"]}]
     }
 }
