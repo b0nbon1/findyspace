@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./api:/usr/api/
-      - /usr/api/node_modules
+      - ./api/node_modules:/usr/api/node_modules
     depends_on:
       - db
     links:
@@ -52,7 +52,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./client:/usr/client/
-      - /usr/client/node_modules
+      - ./client/node_modules:/usr/client/node_modules
     depends_on:
       - api
     links:

@@ -5,6 +5,6 @@ import { TransformInterceptor } from './utils/transform.interceptor';
 export class AppController {
   @Get()
   getHello() {
-    return 'Hello FindySpace!';
+    return { message: 'Hello FindySpace!' };
   }
 }

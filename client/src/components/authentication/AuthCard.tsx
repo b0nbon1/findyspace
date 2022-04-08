@@ -11,6 +11,13 @@ import {
   Typography,
 } from '@mui/material';
 import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useMutation } from '@apollo/client';
+import { LoadingButton } from '@mui/lab';
+import LOGIN_WITH_EMAIL from '../../graphql/mutaions/loginWithEmail';
+import REGISTER_WITH_EMAIL from '../../graphql/mutaions/registerWithEmail';
 
 interface AuthCardProp {
   open: boolean;
@@ -31,6 +38,39 @@ const style = {
 };
 
 function AuthCard({ open, handleClose, isLogin, handleAuth }: AuthCardProp) {
+  const schema = yup.object({
+    email: yup.string().email().required(),
+    password: yup.string().required().min(8),
+    ...(!isLogin && {
+      confirmPassword: yup
+        .string()
+        .required('confirmed password is required field')
+        .oneOf([yup.ref('password'), null], 'Passwords must match'),
+    }),
+  });
+  const [loginUser, { loading }] = useMutation(LOGIN_WITH_EMAIL);
+  const [registerUser, { loading: registerLoading }] =
+    useMutation(REGISTER_WITH_EMAIL);
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const onSubmit = async ({ email, password }: any) => {
+    try {
+      let res;
+      if (isLogin) {
+        res = await loginUser({ variables: { email, password } });
+      } else {
+        res = await registerUser({ variables: { email, password } });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Modal
       open={open}
@@ -42,15 +82,75 @@ function AuthCard({ open, handleClose, isLogin, handleAuth }: AuthCardProp) {
         <Box sx={style}>
           <Box sx={{ my: 2 }}>
             <Typography>Email</Typography>
-            <TextField fullWidth type="email" placeholder="Email" />
+            <Controller
+              control={control}
+              name="email"
+              render={({ field: { onChange, onBlur, value, ref } }) => (
+                <TextField
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value || ''}
+                  ref={ref}
+                  fullWidth
+                  type="email"
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
+                  placeholder="Email"
+                />
+              )}
+            />
           </Box>
           <Box sx={{ my: 2 }}>
             <Typography>Password</Typography>
-            <TextField fullWidth type="password" placeholder="Password" />
+            <Controller
+              control={control}
+              name="password"
+              render={({ field: { onChange, onBlur, value, ref } }) => (
+                <TextField
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value || ''}
+                  ref={ref}
+                  fullWidth
+                  type="password"
+                  error={!!errors.password}
+                  helperText={errors.password?.message}
+                  placeholder="Password"
+                />
+              )}
+            />
           </Box>
-          <Button fullWidth size="large" variant="contained">
+          {!isLogin && (
+            <Box sx={{ my: 2 }}>
+              <Typography>Confirm Password</Typography>
+              <Controller
+                control={control}
+                name="confirmPassword"
+                render={({ field: { onChange, onBlur, value, ref } }) => (
+                  <TextField
+                    onChange={onChange}
+                    onBlur={onBlur}
+                    value={value || ''}
+                    ref={ref}
+                    fullWidth
+                    type="password"
+                    error={!!errors.confirmPassword}
+                    helperText={errors.confirmPassword?.message}
+                    placeholder="Confirm Password"
+                  />
+                )}
+              />
+            </Box>
+          )}
+          <LoadingButton
+            fullWidth
+            size="large"
+            onClick={handleSubmit(onSubmit)}
+            variant="contained"
+            loading={loading || registerLoading}
+          >
             {isLogin ? 'Log In' : 'Sign up'}
-          </Button>
+          </LoadingButton>
           {isLogin && (
             <Box display="flex" justifyContent="center" sx={{ my: 4 }}>
               <MuiLink sx={{ textDecoration: 'none' }} href="/forgot-password">
