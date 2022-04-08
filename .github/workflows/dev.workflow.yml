@@ -50,6 +50,5 @@ jobs:
         - run: |
             cd client
             yarn install --frozen-lockfile
-            yarn test
             yarn lint
             yarn build
