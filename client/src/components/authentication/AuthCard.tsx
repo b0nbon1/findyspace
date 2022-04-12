@@ -212,7 +212,7 @@ function AuthCard({ open, handleClose, isLogin, handleAuth }: AuthCardProp) {
               </Button>
             </Grid>
           </Grid>
-          {isLogin && (
+          {!isLogin && (
             <Typography sx={{ my: 2, textAlign: 'center' }}>
               By continuing you agree to our{' '}
               <MuiLink href="/terms" sx={{ textDecoration: 'none' }}>
