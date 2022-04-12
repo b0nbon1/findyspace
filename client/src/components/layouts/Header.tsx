@@ -23,7 +23,6 @@ export interface HeaderProps {
 
 function Header({ description, title }: HeaderProps) {
   const router = useRouter();
-  console.log(router.pathname);
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null,
   );

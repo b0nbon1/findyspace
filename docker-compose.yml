@@ -1,7 +1,7 @@
-version: "3"
+version: "3.8"
 services:
   api:
-    image: findyspaceapi
+    image: b0nb0n1/findyspace-api
     container_name: findyspaceapi
     restart: always
     env_file: ./api/.env
@@ -39,7 +39,7 @@ services:
       - findyspace
 
   client:
-    image: findyspaceclient
+    image: b0nb0n1/findyspace-client
     container_name: findyspaceclient
     restart: always
     stdin_open: true

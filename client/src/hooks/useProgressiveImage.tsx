@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useProgressiveImage = (src: any) => {
-  const [sourceLoaded, setSourceLoaded] = useState(null);
+  const [sourceLoaded, setSourceLoaded] = useState<null | string>(null);
 
   useEffect(() => {
     const img = new Image();

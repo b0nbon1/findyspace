@@ -9,39 +9,40 @@ Revolutionize event spaces booking experience
 
 ## GET STARTED 🛫
 
-#### Set up
+### Set up
+**prerequisites**
+- Nodejs
+- Postgresql
 
-- Navigate to the directory where you want to copy this repo,clone it by running `git clone <link of the repo>`
+#### Run app 🌋
 
-- Install `postgresql` into your computer
+1. Navigate to the directory where you want to copy this repo,clone it by running `git clone <link of the repo>`
 
-- Create two databases:
-    -  for development
-    -  for testing
+2. open the folder in terminal
 
-- add connection string Urls to the `.env` file :
-    - `DEV_DATABASE_URL=postgres://<username>:<password>@127.0.0.1:5432/<database for dev>` for development
-    - `TEST_DATABASE_URL=postgres://<username>:<password>@127.0.0.1:5432/<database for test>` for testing
+3. To run client app;
+    - `cd client`
+    - `cp .env.example .env` to copy environment variables to .env and fill them
+    - create database in your psql and add the name of db in .env
+    - run `yarn install` to install the packages
+    - run `yarn start:dev` to start the server
 
-    - Make a copy of the .env.example and rename it .env, add the corresponding project variables, same as docker.env.example to docker.env
+4. To run client app;
+    - `cd client`
+    - `cp .env.example .env` to copy environment variables to .env and fill them
+    - run `yarn install` to install the packages
+    - run `yarn dev` to start the server
 
-- Run migrations using `<migration script>`
+5. for client app go to browser and test it on `localhost:5090`
 
-- Run `<seed script>` for commit the seeds to the database
-
-- To undo:
-       - all seeders run `<undo seed script>`
-       - all migrations run `<undo migration script>`
-
-#### Run the app 🌋
-- use docker instructions for running servers
+6. for api app go to postman and test with url `localhost:3090`
 
 
 ## Deployment 🚀🚀
 
 This app will be deployed on heroku, To access this app go to these link:
-    - [Production URL](https://https://kencinema.herokuapp.com/.herokuapp.com/)
-    - [Staging](https://https://kencinema.herokuapp.com/.herokuapp.com/)
+    - [Production URL]()
+    - [Staging]()
 
 ## API 🚦
 
@@ -57,14 +58,14 @@ It's is using navigate to route `https://localhost:<port>`
 
 3. Follow the `.env.example` and `.docker.env.example` file to setup your environment and populate with corresponding values
 
+#### Run app on Docker 🌋
 
-#### Run app on Docker
-
-1. Run `docker-compose up --build` to create and start containers
+1. Run `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build` to create and start apps
 
 2. for client app go to browser and test it on `localhost:5090`
 
 3. for api app go to postman and test with url `localhost:3090`
+
 
 
 
