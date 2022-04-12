@@ -88,12 +88,12 @@ function WhyUs() {
       <Grid
         sx={{
           mt: 2,
-          '& > :nth-child(1), & > :nth-child(4), & > :nth-child(5)': {
+          '& > :nth-of-type(1), & > :nth-of-type(4), & > :nth-of-type(5)': {
             [theme.breakpoints.down('md')]: {
               backgroundColor: '#F8FAFC',
             },
           },
-          '& > :nth-child(even)': {
+          '& > :nth-of-type(even)': {
             [theme.breakpoints.up('md')]: {
               backgroundColor: '#F8FAFC',
             },
@@ -101,7 +101,7 @@ function WhyUs() {
               backgroundColor: '#F8FAFC',
             },
           },
-          '& > :nth-child(odd)': {
+          '& > :nth-of-type(odd)': {
             [theme.breakpoints.down('sm')]: {
               backgroundColor: '#fff',
             },
