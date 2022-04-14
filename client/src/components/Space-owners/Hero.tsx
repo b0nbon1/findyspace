@@ -97,7 +97,7 @@ function Hero() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit mi
           mi egestas id urna arcu, ornare blandit.
         </Typography>
-        <Button variant="contained" sx={{ width: 'fit-content', mt: 1 }}>
+        <Button variant="contained" sx={{ width: 'fit-content', mt: 1, py: 2 }}>
           Become A Host
         </Button>
       </Box>
