@@ -2,12 +2,15 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { CategoryActivity } from './categoryActivities.entity';
 
 @Entity()
-export class SpaceActivity {
+export class Activity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -16,6 +19,13 @@ export class SpaceActivity {
 
   @Column({ nullable: true })
   description?: string;
+
+  @Column({ nullable: true })
+  category_id?: string;
+
+  @ManyToOne(() => CategoryActivity, { cascade: true })
+  @JoinColumn({ name: 'category_id' })
+  type: CategoryActivity;
 
   @Column()
   @CreateDateColumn()

@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class SpaceCategory {
+export class CategoryActivity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
