@@ -9,12 +9,12 @@ import {
 import { Point } from 'geojson';
 
 @Entity()
-export class SpaceAddress {
+export class Address {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ nullable: true })
-  region?: string;
+  country?: string;
 
   @Column({ nullable: true })
   street?: string;
