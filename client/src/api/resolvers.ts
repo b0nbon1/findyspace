@@ -7,8 +7,17 @@ const resolvers = {
       dataSources.authApi.testConnection(),
   },
   Mutation: {
-    loginWithEmail: (_: any, { email, password }: any, { dataSources }: any) =>
-      dataSources.authApi.loginWithEmail({ email, password }),
+    loginWithEmail: (
+      _: any,
+      { email, password }: any,
+      { dataSources, serverRequest, serverResponse }: any,
+    ) =>
+      dataSources.authApi.loginWithEmail(
+        { email, password },
+
+        serverRequest,
+        serverResponse,
+      ),
     registerWithEmail: (
       _: any,
       { email, password }: any,

@@ -4,6 +4,7 @@ import {
   Get,
   HttpCode,
   Post,
+  Request,
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
@@ -56,7 +57,8 @@ export class AuthController {
   @Get()
   @HttpCode(200)
   @UseInterceptors(TransformInterceptor)
-  async test() {
+  async test(@Request() req) {
+    console.log('----->', req.user);
     return { message: 'Success!' };
   }
 }
