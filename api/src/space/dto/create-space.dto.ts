@@ -25,8 +25,12 @@ export class CreateSpaceDto {
   parking_slots?: number;
 
   @ApiProperty()
-  @IsIn(['onproperty', 'street'])
-  parking_type?: 'onproperty' | 'street';
+  @IsBoolean()
+  onproperty_parking?: boolean;
+
+  @ApiProperty()
+  @IsBoolean()
+  street_parking?: boolean;
 
   @ApiProperty()
   @IsBoolean()
@@ -36,13 +40,10 @@ export class CreateSpaceDto {
   address_id?: string;
 
   @ApiProperty()
-  category_id?: string;
-
-  @ApiProperty()
   type_id?: string;
 
   @ApiProperty()
-  activity_id?: string[];
+  activities?: any[];
 
   @ApiProperty()
   file_id?: string[];

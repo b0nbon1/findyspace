@@ -69,6 +69,7 @@ export class AuthService {
         lastname: userDetails.name?.split(' ')?.[1] || '',
         connectedToFacebook: userDetails.type === 'facebook',
         connectedToGoogle: userDetails.type === 'google',
+        email_verified: true,
       });
 
       return {

@@ -1,6 +1,6 @@
 import {
   ApolloServerPluginCacheControl,
-  ApolloServerPluginLandingPageDisabled,
+  // ApolloServerPluginLandingPageDisabled,
   ApolloServerPluginLandingPageGraphQLPlayground,
 } from 'apollo-server-core';
 import AuthorizationApi from './datasources/auth';

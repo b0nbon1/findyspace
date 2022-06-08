@@ -1,7 +1,12 @@
 import { ApolloServer } from 'apollo-server-micro';
 import { processRequest } from 'graphql-upload';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { appEncryptionKey, NodeEnv, sessionName } from '../../config';
+import {
+  appEncryptionKey,
+  NodeEnv,
+  sessionDuaration,
+  sessionName,
+} from '../../config';
 import resolvers from '../../src/api/resolvers';
 import typeDefs from '../../src/api/schema';
 import { dataSources, plugins } from '../../src/api/server';
@@ -19,9 +24,6 @@ const server = new ApolloServer({
     const session = req.cookies[sessionName];
     let user;
     let userBearerToken;
-    let userIdentity;
-    let identityToken;
-    let identityXtoken;
 
     if (session) {
       const [ikm, info, authTag] = appEncryptionKey.split('|');
@@ -29,10 +31,9 @@ const server = new ApolloServer({
       const parsedSession = JSON.parse(
         decryptSignedCipher(ikm, info, authTag, session)?.toString() || '{}',
       );
-
       if (
         new Date().getTime() - Number(parsedSession.loginTime) <=
-        Number(process.env.SESSION_DURATION) * 60 * 1000
+        Number(sessionDuaration) * 60 * 1000
       ) {
         user = parsedSession.user;
         userBearerToken = parsedSession.bearerToken;
@@ -43,10 +44,7 @@ const server = new ApolloServer({
       serverResponse: res,
       serverRequest: req,
       user,
-      identityUser: userIdentity,
-      identityToken,
       bearerToken: userBearerToken,
-      identityXtoken,
     };
   },
 });

@@ -11,11 +11,13 @@ import {
   Typography,
 } from '@mui/material';
 import React from 'react';
+import Router from 'next/router';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@apollo/client';
 import { LoadingButton } from '@mui/lab';
+import { useSnackbar } from 'notistack';
 import LOGIN_WITH_EMAIL from '../../graphql/mutaions/loginWithEmail';
 import REGISTER_WITH_EMAIL from '../../graphql/mutaions/registerWithEmail';
 
@@ -38,6 +40,7 @@ const style = {
 };
 
 function AuthCard({ open, handleClose, isLogin, handleAuth }: AuthCardProp) {
+  const { enqueueSnackbar } = useSnackbar();
   const schema = yup.object({
     email: yup.string().email().required(),
     password: yup.string().required().min(8),
@@ -63,10 +66,26 @@ function AuthCard({ open, handleClose, isLogin, handleAuth }: AuthCardProp) {
       let res;
       if (isLogin) {
         res = await loginUser({ variables: { email, password } });
+        if (res.data?.loginWithEmail?.status) {
+          handleClose();
+          Router.reload();
+        } else {
+          enqueueSnackbar(
+            'Failed to login, kindly check your email and password',
+            {
+              variant: 'error',
+              autoHideDuration: 3000,
+            },
+          );
+        }
       } else {
         res = await registerUser({ variables: { email, password } });
       }
     } catch (error) {
+      enqueueSnackbar('Failed to login, kindly check your email and password', {
+        variant: 'error',
+        autoHideDuration: 3000,
+      });
       console.log(error);
     }
   };

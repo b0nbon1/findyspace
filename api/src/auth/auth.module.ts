@@ -1,4 +1,4 @@
-import { Module, OnModuleInit } from '@nestjs/common';
+import { forwardRef, Module, OnModuleInit } from '@nestjs/common';
 import { AuthModuleOptions, PassportModule } from '@nestjs/passport';
 import { ConfigService } from '@nestjs/config';
 import { AuthService } from './auth.service';
@@ -19,10 +19,10 @@ import { UsersModule } from 'src/users/users.module';
       inject: [ConfigService],
     }),
     HttpModule,
-    UsersModule,
+    forwardRef(() => UsersModule),
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, UsersService, AuthModuleOptions],
+  providers: [AuthService, JwtStrategy, AuthModuleOptions],
   exports: [AuthService, JwtModule],
 })
 export class AuthModule implements OnModuleInit {
