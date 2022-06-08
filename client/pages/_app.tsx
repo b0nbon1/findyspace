@@ -5,17 +5,18 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 
 import Head from 'next/head';
 import { SnackbarProvider } from 'notistack';
+import App from 'next/app';
 import createEmotionCache from '../src/utils/createEmotionCache';
 import theme from '../src/styles/theme';
 import '../src/styles/globals.css';
 import MainLayout from '../src/components/layouts/MainLayout';
 import client from '../src/utils/client';
+import webAuth from '../src/utils/webAuth';
 
 const clientSideEmotionCache = createEmotionCache();
 
 function MyApp(props: any) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -40,5 +41,15 @@ function MyApp(props: any) {
     </CacheProvider>
   );
 }
+
+MyApp.getInitialProps = async (context: any) => {
+  if (typeof window === 'undefined') {
+    webAuth(context.ctx);
+  }
+  console.log(context.ctx.user);
+  return {
+    ...App.getInitialProps(context),
+  };
+};
 
 export default MyApp;

@@ -1,14 +1,19 @@
 import {
   Controller,
-  // Get,
+  Get,
   Post,
   Body,
+  UseInterceptors,
+  UseGuards,
+  Request,
   // Patch,
   // Param,
   // Delete,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
+import { TransformInterceptor } from 'src/utils/transform.interceptor';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 // import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller({
@@ -21,6 +26,16 @@ export class UsersController {
   @Post('create')
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('get_profile')
+  @UseInterceptors(TransformInterceptor)
+  async getProfile(@Request() req) {
+    const userId = req.user?.id;
+    const user = await this.usersService.findById(userId);
+    delete user.password;
+    return user;
   }
 
   // @Get()

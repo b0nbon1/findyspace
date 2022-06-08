@@ -39,7 +39,7 @@ export class Space extends BaseEntity {
 
   @ManyToMany(() => Activity)
   @JoinTable()
-  activities?: Activity;
+  activities?: Activity[];
 
   @Column({ nullable: true })
   type_id?: string;
@@ -58,7 +58,10 @@ export class Space extends BaseEntity {
   parking_slots?: number;
 
   @Column({ nullable: true })
-  parking_type?: 'onproperty' | 'street';
+  onproperty_parking?: boolean;
+
+  @Column({ nullable: true })
+  street_parking?: boolean;
 
   @Column({ nullable: true, type: 'boolean' })
   parking_close?: boolean;

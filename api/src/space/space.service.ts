@@ -11,6 +11,7 @@ import { UpdateSpaceDto } from './dto/update-space.dto';
 import { Space } from './entities/space.entity';
 import { FilesService } from 'src/files/files.service';
 import { AddressService } from 'src/address/address.service';
+import { ActivityService } from 'src/activities/activities.service';
 
 @Injectable()
 export class SpaceService {
@@ -19,11 +20,13 @@ export class SpaceService {
     private spacesRepository: Repository<Space>,
     private fileService: FilesService,
     private addressService: AddressService,
+    private activitiesService: ActivityService,
   ) {}
   async create(createSpaceDto: CreateSpaceDto) {
     const space = this.spacesRepository.create({
       ...createSpaceDto,
       images: [],
+      activities: [],
     });
     await space.save();
     return space;
@@ -47,10 +50,14 @@ export class SpaceService {
   }
 
   async update(id: string, updateSpaceDto: UpdateSpaceDto) {
-    let dataUpdate = {};
     const space = await this.spacesRepository.findOne(id, {
       relations: ['images'],
     });
+    let dataUpdate = {
+      id,
+      ...space,
+      ...updateSpaceDto,
+    };
     const isUpdateImages = !!updateSpaceDto.images?.length;
     if (isUpdateImages) {
       space.images.forEach(({ id }) => {
@@ -63,16 +70,20 @@ export class SpaceService {
       });
 
       dataUpdate = {
-        ...space,
-        ...updateSpaceDto,
+        ...dataUpdate,
         images,
-        id,
       };
-    } else {
+    }
+    const isUpdateActivities = !!updateSpaceDto.activities?.length;
+    if (isUpdateActivities) {
+      const activities = [];
+      updateSpaceDto.activities?.forEach(async (id) => {
+        const activity = await this.activitiesService.findOne(id);
+        activities.push(activity);
+      });
       dataUpdate = {
-        ...space,
-        ...updateSpaceDto,
-        id,
+        activities,
+        ...dataUpdate,
       };
     }
     return this.spacesRepository.save(dataUpdate);
