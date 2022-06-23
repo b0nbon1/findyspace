@@ -18,6 +18,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@apollo/client';
 import { LoadingButton } from '@mui/lab';
 import { useSnackbar } from 'notistack';
+import { signIn } from 'next-auth/react';
 import LOGIN_WITH_EMAIL from '../../graphql/mutaions/loginWithEmail';
 import REGISTER_WITH_EMAIL from '../../graphql/mutaions/registerWithEmail';
 
@@ -207,7 +208,14 @@ function AuthCard({ open, handleClose, isLogin, handleAuth }: AuthCardProp) {
           </Box>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-              <Button size="large" fullWidth variant="outlined">
+              <Button
+                onClick={() =>
+                  signIn('google', { callbackUrl: '/login?socials=1' })
+                }
+                size="large"
+                fullWidth
+                variant="outlined"
+              >
                 <img
                   style={{ marginRight: '.5rem', width: '24px' }}
                   alt="Google"
@@ -219,7 +227,14 @@ function AuthCard({ open, handleClose, isLogin, handleAuth }: AuthCardProp) {
               </Button>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Button size="large" variant="outlined" fullWidth>
+              <Button
+                onClick={() =>
+                  signIn('facebook', { callbackUrl: '/login?socials=0' })
+                }
+                size="large"
+                variant="outlined"
+                fullWidth
+              >
                 <img
                   style={{ marginRight: '.5rem', width: '24px' }}
                   alt="Facebook"

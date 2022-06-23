@@ -58,6 +58,7 @@
         "class-methods-use-this": "off",
         "implicit-arrow-linebreak": "off",
         "operator-linebreak": "off",
+        "react/jsx-curly-newline": "off",
         "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.tsx", "**/*.spec.tsx"]}]
     }
 }
