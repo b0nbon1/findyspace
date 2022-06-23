@@ -90,12 +90,12 @@ function HowTo() {
               ml: { xs: 0, md: 1 },
               '& > :nth-of-type(1), & > :nth-of-type(4), & > :nth-of-type(5)': {
                 [theme.breakpoints.up('md')]: {
-                  backgroundColor: '#F8FAFC',
+                  backgroundColor: '#FFF',
                 },
               },
               '& > :nth-of-type(even)': {
                 [theme.breakpoints.down('md')]: {
-                  backgroundColor: '#F8FAFC',
+                  backgroundColor: '#FFF',
                 },
               },
             }}

@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React, { ReactNode } from 'react';
 import AuthHeader, { AuthHeaderProps } from './AuthHeader';
 import Footer, { FooterProps } from './Footer';
@@ -17,16 +18,18 @@ function MainLayout({
   FooterProps &
   AuthHeaderProps) {
   return (
-    <>
+    <Box display="flex" flexDirection="column" sx={{ minHeight: '98vh' }}>
       {header &&
         (user ? (
           <AuthHeader title={title} description={description} user={user} />
         ) : (
           <Header title={title} description={description} />
         ))}
-      <main>{children}</main>
+      <Box sx={{ flex: 1, positon: 'relative', background: '#F8FAFC' }}>
+        {children}
+      </Box>
       <Footer hideLinks={hideLinks} />
-    </>
+    </Box>
   );
 }
 

@@ -79,6 +79,7 @@ export class AuthService {
         register: false,
         user,
       };
+      delete user.password;
     } else {
       const usr = await this.usersService.createUser({
         email: userDetails.email,
@@ -88,7 +89,7 @@ export class AuthService {
         connectedToGoogle: userDetails.type === 'google',
         email_verified: true,
       });
-
+      delete usr.password;
       return {
         access_token: await this._signJwt(usr.id),
         register: true,
