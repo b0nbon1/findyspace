@@ -155,16 +155,21 @@ function AuthHeader({ description, title, user }: AuthHeaderProps) {
                   }}
                 />
               </Button>
-              <Avatar
-                sx={{
-                  bgcolor: deepPurple[300],
-                  height: '2.2rem',
-                  width: '2.2rem',
-                  border: '3px #5D33D5 solid',
-                  cursor: 'pointer',
-                }}
-                src={user.profile_pic ?? 'https://i.pravatar.cc/300'}
-              />
+              <Button
+                sx={{ position: 'relative', p: 0, minWidth: 0, mr: 2 }}
+                href="/account"
+              >
+                <Avatar
+                  sx={{
+                    bgcolor: deepPurple[300],
+                    height: '2.2rem',
+                    width: '2.2rem',
+                    border: '3px #5D33D5 solid',
+                    cursor: 'pointer',
+                  }}
+                  src={user.profile_pic ?? 'https://i.pravatar.cc/300'}
+                />
+              </Button>
             </Box>
             <IconButton
               size="large"

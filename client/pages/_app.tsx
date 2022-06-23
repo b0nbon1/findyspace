@@ -20,12 +20,11 @@ function MyApp(props: any) {
   const {
     Component,
     emotionCache = clientSideEmotionCache,
-    pageProps: { session, ...pageProps },
+    pageProps,
     user,
   } = props;
-  console.log(user);
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={pageProps?.session}>
       <CacheProvider value={emotionCache}>
         <Head>
           <meta

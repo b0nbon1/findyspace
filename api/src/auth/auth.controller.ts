@@ -49,7 +49,7 @@ export class AuthController {
     return this.authService.loginSocial({
       email: socialUser.email,
       name: socialUser.name,
-      type: 'facebook',
+      type: 'google',
     });
   }
 
