@@ -32,5 +32,11 @@ export class UpdateUserDto
   industry_id?: string;
 
   @ApiProperty()
+  phone?: string;
+
+  @ApiProperty()
+  phone_verified?: boolean;
+
+  @ApiProperty()
   role?: Role;
 }

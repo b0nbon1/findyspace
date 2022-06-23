@@ -57,7 +57,22 @@ export class AuthService {
     picture?: string;
   }) {
     const user = await this.usersService.findByEmail(userDetails.email);
+
     if (user) {
+      if (
+        (userDetails.type === 'facebook' && !user.connectedToFacebook) ||
+        (userDetails.type === 'google' && !user.connectedToGoogle)
+      ) {
+        throw new HttpException(
+          {
+            status: HttpStatus.UNPROCESSABLE_ENTITY,
+            error: `${
+              userDetails.type === 'facebook' ? 'Facebook' : 'Google'
+            } account not connected to findySpace, kindly login and connect it`,
+          },
+          HttpStatus.UNPROCESSABLE_ENTITY,
+        );
+      }
       return {
         access_token: await this._signJwt(user.id),
         register: false,

@@ -6,7 +6,7 @@ import {
   UseInterceptors,
   UseGuards,
   Request,
-  // Patch,
+  Patch,
   // Param,
   // Delete,
 } from '@nestjs/common';
@@ -14,7 +14,7 @@ import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { TransformInterceptor } from 'src/utils/transform.interceptor';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-// import { UpdateUserDto } from './dto/update-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller({
   version: '1',
@@ -34,6 +34,16 @@ export class UsersController {
   async getProfile(@Request() req) {
     const userId = req.user?.id;
     const user = await this.usersService.findById(userId);
+    delete user.password;
+    return user;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch('edit_profile')
+  @UseInterceptors(TransformInterceptor)
+  async editProfile(@Request() req, @Body() updateUserDto: UpdateUserDto) {
+    const userId = req.user?.id;
+    const user = await this.usersService.update(userId, updateUserDto);
     delete user.password;
     return user;
   }

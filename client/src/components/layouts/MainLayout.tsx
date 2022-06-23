@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import AuthHeader, { AuthHeaderProps } from './AuthHeader';
 import Footer, { FooterProps } from './Footer';
 import Header, { HeaderProps } from './Header';
 
@@ -8,14 +9,21 @@ function MainLayout({
   title,
   description,
   header,
+  user,
 }: {
   children: ReactNode;
   header?: boolean;
 } & HeaderProps &
-  FooterProps) {
+  FooterProps &
+  AuthHeaderProps) {
   return (
     <>
-      {header && <Header title={title} description={description} />}
+      {header &&
+        (user ? (
+          <AuthHeader title={title} description={description} user={user} />
+        ) : (
+          <Header title={title} description={description} />
+        ))}
       <main>{children}</main>
       <Footer hideLinks={hideLinks} />
     </>
