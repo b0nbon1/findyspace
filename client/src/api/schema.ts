@@ -7,6 +7,12 @@ const typeDefs = gql`
     message: String
   }
 
+  type LoginWithSocialsRes {
+    status: Boolean
+    message: String
+    accessToken: String
+  }
+
   type Query {
     testConnection: LoginWithEmailRes
   }
@@ -14,6 +20,7 @@ const typeDefs = gql`
   type Mutation {
     loginWithEmail(email: String!, password: String!): LoginWithEmailRes
     registerWithEmail(email: String!, password: String!): LoginWithEmailRes
+    loginWithSocials(token: String!, type: String!): LoginWithSocialsRes
   }
 `;
 

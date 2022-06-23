@@ -5,6 +5,6 @@ export function validateHeaders(
   res: Response,
   next: NextFunction,
 ) {
-  console.log(`Request...`, req.headers);
+  // console.log(`Request...`, req.headers);
   next();
 }
