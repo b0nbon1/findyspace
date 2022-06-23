@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { createTheme } from '@mui/material/styles';
 
 const Theme = createTheme({
