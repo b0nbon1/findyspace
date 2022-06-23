@@ -20,7 +20,7 @@ function MyApp(props: any) {
   const {
     Component,
     emotionCache = clientSideEmotionCache,
-    pageProps: { session, ...pageProps },
+    pageProps,
     user,
   } = props;
   return (
