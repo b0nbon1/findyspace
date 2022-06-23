@@ -9,3 +9,5 @@ export const BaseUrl = configs!.API_URL;
 export const sessionDuaration = configs!.SESSION_DURATION || 1200;
 export const fbAppID = configs!.FACEBOOK_CLIENT_ID;
 export const fbAppSecret = configs!.FACEBOOK_CLIENT_SECRET;
+export const googleClientID = configs!.GOOGLE_CLIENT_ID;
+export const googleClientSecret = configs!.GOOGLE_CLIENT_SECRET;

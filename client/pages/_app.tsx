@@ -2,6 +2,7 @@ import React from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
+import { SessionProvider } from 'next-auth/react';
 
 import Head from 'next/head';
 import { SnackbarProvider } from 'notistack';
@@ -19,32 +20,37 @@ function MyApp(props: any) {
   const {
     Component,
     emotionCache = clientSideEmotionCache,
-    pageProps,
+    pageProps: { session, ...pageProps },
     user,
   } = props;
-  console.log('####>', user);
+  console.log(user);
   return (
-    <CacheProvider value={emotionCache}>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <ApolloProvider client={client}>
-          <SnackbarProvider
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            maxSnack={3}
-          >
-            <MainLayout user={user}>
-              <Component {...pageProps} user={user} />
-            </MainLayout>
-          </SnackbarProvider>
-        </ApolloProvider>
-      </ThemeProvider>
-    </CacheProvider>
+    <SessionProvider session={session}>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </Head>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <ApolloProvider client={client}>
+            <SnackbarProvider
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              maxSnack={3}
+            >
+              <MainLayout user={user}>
+                <Component {...pageProps} user={user} />
+              </MainLayout>
+            </SnackbarProvider>
+          </ApolloProvider>
+        </ThemeProvider>
+      </CacheProvider>
+    </SessionProvider>
   );
 }
 

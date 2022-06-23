@@ -23,6 +23,16 @@ const resolvers = {
       { email, password }: any,
       { dataSources }: any,
     ) => dataSources.usersApi.createUser({ email, password }),
+    loginWithSocials: (
+      _: unknown,
+      { token, type }: any,
+      { dataSources, serverRequest, serverResponse }: any,
+    ) =>
+      dataSources.authApi.loginWithSocials(
+        { token, type },
+        serverRequest,
+        serverResponse,
+      ),
   },
 };
 
