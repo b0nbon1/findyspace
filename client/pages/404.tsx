@@ -90,10 +90,10 @@ function Page404() {
                   color: '#4C5567',
                   fontSize: '1.25rem',
                   lineHeight: 1.5,
-                  pb: 2,
+                  pb: 4,
                 }}
               >
-                Error 404 Page Not Found
+                Page Not Found!
               </Typography>
               <BackButton href="/">Back to Home Page</BackButton>
             </Box>

@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Container,
@@ -7,21 +8,42 @@ import {
   Menu,
   MenuItem,
   Typography,
+  Link,
 } from '@mui/material';
 import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { AppBarStyled, BecomeHost, Seperator, ToolbarStyled } from './styles';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import { deepPurple } from '@mui/material/colors';
+import { AppBarStyled, ToolbarStyled } from './styles';
 import AuthCard from '../authentication/AuthCard';
 
-export interface HeaderProps {
+export interface AuthHeaderProps {
   title?: string | undefined;
   description?: string | undefined;
+  user?: any | undefined;
 }
 
-function Header({ description, title }: HeaderProps) {
+const paths = [
+  {
+    url: '/bookings',
+    name: 'Bookings',
+    id: 1,
+  },
+  {
+    url: '/chat',
+    name: 'Messages',
+    id: 2,
+  },
+  {
+    url: '/help',
+    name: 'Help',
+    id: 3,
+  },
+];
+
+function AuthHeader({ description, title, user }: AuthHeaderProps) {
   const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null,
@@ -53,7 +75,7 @@ function Header({ description, title }: HeaderProps) {
       <AppBarStyled elevation={0} position="static">
         <Container maxWidth="xl">
           <ToolbarStyled>
-            <Box sx={{ flex: 1, my: 1 }}>
+            <Box sx={{ flex: 2, my: 1 }}>
               <Link href="/">
                 <img
                   src="/main-logo.png"
@@ -66,28 +88,83 @@ function Header({ description, title }: HeaderProps) {
             <Box
               display="flex"
               alignItems="center"
-              sx={{ display: { xs: 'none', md: 'flex' } }}
+              sx={{
+                display: { xs: 'none', md: 'flex' },
+                flex: 2,
+                justifyContent: 'flex-end',
+              }}
             >
-              {router.pathname !== '/space-owner' && (
-                <>
-                  <Link href="/space-owner">
-                    <BecomeHost sx={{ mx: 1 }} variant="outlined">
-                      Become A Host
-                    </BecomeHost>
-                  </Link>
-                  <Seperator sx={{ mx: 1 }} />
-                </>
-              )}
-              <Button sx={{ mx: 1 }} onClick={() => setOpenSignup(true)}>
-                Sign Up
-              </Button>
+              {paths.map((path) => (
+                <Link
+                  key={path.id}
+                  sx={{
+                    textDecoration: 'none',
+                    mr: 2,
+                    color:
+                      router.asPath === path.url
+                        ? 'primary.main'
+                        : 'text.primary',
+                    '&:hover': {
+                      color: 'primary.main',
+                    },
+                  }}
+                  href={path.url}
+                >
+                  {path.name}
+                </Link>
+              ))}
               <Button
-                variant="contained"
-                sx={{ mx: 1, borderRadius: '4px' }}
-                onClick={() => setOpenLogin(true)}
+                variant="outlined"
+                sx={{
+                  textTransform: 'none',
+                  py: 0.8,
+                  px: 1.5,
+                  borderColor: '#c6c6c6',
+                  color: 'inherit',
+                  borderRadius: 8,
+                  mr: 2,
+                  '&:hover': {
+                    color: 'primary.main',
+                  },
+                }}
+                href="/bookings"
               >
-                Log In
+                Switch to Hosting
               </Button>
+              <Button sx={{ position: 'relative', p: 0, minWidth: 0, mr: 2 }}>
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    width: '.7rem',
+                    height: '.7rem',
+                    borderRadius: '50%',
+                    backgroundColor: 'primary.main',
+                    right: 3,
+                    top: 4,
+                  }}
+                />
+                <NotificationsNoneOutlinedIcon
+                  sx={{
+                    fontSize: '2rem',
+                    fontWeigt: '100',
+                    color: '#545252',
+                    cursor: 'pointer',
+                    '&:hover': {
+                      color: 'primary.main',
+                    },
+                  }}
+                />
+              </Button>
+              <Avatar
+                sx={{
+                  bgcolor: deepPurple[300],
+                  height: '2.2rem',
+                  width: '2.2rem',
+                  border: '3px #5D33D5 solid',
+                  cursor: 'pointer',
+                }}
+                src={user.profile_pic ?? 'https://i.pravatar.cc/300'}
+              />
             </Box>
             <IconButton
               size="large"
@@ -138,28 +215,36 @@ function Header({ description, title }: HeaderProps) {
               <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
                 <Button
                   sx={{ color: 'inherit', p: 0, textTransform: 'none' }}
-                  onClick={() => setOpenSignup(true)}
+                  onClick={() => setOpenLogin(true)}
                 >
-                  <Typography sx={{ fontWeight: 'bold' }}>Sign up</Typography>
+                  <Typography>Messages</Typography>
                 </Button>
               </MenuItem>
               <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
-                <Button
-                  sx={{ color: 'inherit', p: 0, textTransform: 'none' }}
-                  onClick={() => setOpenLogin(true)}
-                >
-                  <Typography>Log in</Typography>
-                </Button>
+                <Link href="/bookings">
+                  <Typography>Bookings</Typography>
+                </Link>
               </MenuItem>
               <Divider />
               <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
-                <Link href="/space-owner">
-                  <Typography>Become Host</Typography>
+                <Link href="/contact-us">
+                  <Typography>Help</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
+                <Link href="/manage-listing">
+                  <Typography>Manage listings</Typography>
                 </Link>
               </MenuItem>
               <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
                 <Link href="/contact-us">
-                  <Typography>Help</Typography>
+                  <Typography>Account</Typography>
+                </Link>
+              </MenuItem>
+              <Divider />
+              <MenuItem sx={{ mr: 4 }} onClick={handleClose}>
+                <Link href="/logout">
+                  <Typography>Logout</Typography>
                 </Link>
               </MenuItem>
             </Menu>
@@ -182,10 +267,11 @@ function Header({ description, title }: HeaderProps) {
   );
 }
 
-Header.defaultProps = {
+AuthHeader.defaultProps = {
   description:
     'findyspace or findmyspace Africa app is used to explore spaces in Kenya and East Africa. Explore events, meeting, fun locations available',
   title: 'Explore event spaces, meeting places and workspaces near you',
+  user: null,
 };
 
-export default Header;
+export default AuthHeader;
