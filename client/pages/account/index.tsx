@@ -1,14 +1,12 @@
 import { Box } from '@mui/material';
 import React from 'react';
+import AccountsLayout from '../../src/components/account/AccountsLayout';
 
 function Home() {
   return (
-    <Box
-      style={{
-        width: '100%',
-        margin: 0,
-      }}
-    />
+    <AccountsLayout>
+      <Box />
+    </AccountsLayout>
   );
 }
 

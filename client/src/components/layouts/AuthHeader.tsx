@@ -14,7 +14,7 @@ import Head from 'next/head';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 import { useRouter } from 'next/router';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/Notifications';
 import { deepPurple } from '@mui/material/colors';
 import { AppBarStyled, ToolbarStyled } from './styles';
 import AuthCard from '../authentication/AuthCard';
@@ -135,10 +135,11 @@ function AuthHeader({ description, title, user }: AuthHeaderProps) {
                 <Box
                   sx={{
                     position: 'absolute',
-                    width: '.7rem',
-                    height: '.7rem',
+                    width: '.8rem',
+                    height: '.8rem',
                     borderRadius: '50%',
-                    backgroundColor: 'primary.main',
+                    backgroundColor: '#FF0000',
+                    border: '1px #ffffff solid',
                     right: 3,
                     top: 4,
                   }}
@@ -147,7 +148,6 @@ function AuthHeader({ description, title, user }: AuthHeaderProps) {
                   sx={{
                     fontSize: '2rem',
                     fontWeigt: '100',
-                    color: '#545252',
                     cursor: 'pointer',
                     '&:hover': {
                       color: 'primary.main',
@@ -164,7 +164,7 @@ function AuthHeader({ description, title, user }: AuthHeaderProps) {
                     bgcolor: deepPurple[300],
                     height: '2.2rem',
                     width: '2.2rem',
-                    border: '3px #5D33D5 solid',
+                    border: '3px #C6C6C6 solid',
                     cursor: 'pointer',
                   }}
                   src={user.profile_pic ?? 'https://i.pravatar.cc/300'}

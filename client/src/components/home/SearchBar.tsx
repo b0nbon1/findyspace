@@ -49,7 +49,9 @@ function SearchBar() {
           fullWidth
           select
           placeholder="Enter an activity"
-        />
+        >
+          <MenuItem>Work</MenuItem>
+        </TextField>
       </Box>
       <Box sx={{ mx: 1, flex: 1, width: { xs: '100%', md: 'auto' } }}>
         <Typography sx={{ my: 1 }}>Location</Typography>
@@ -58,7 +60,9 @@ function SearchBar() {
           fullWidth
           select
           placeholder="Search for location"
-        />
+        >
+          <MenuItem>Work</MenuItem>
+        </TextField>
       </Box>
       <Button
         variant="contained"

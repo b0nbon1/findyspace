@@ -1,54 +1,53 @@
-# name: develop
+name: develop
 
-# # Controls when the workflow will run
-# on:
-#   push:
-#     branches: [ dev ]
-#   pull_request:
-#     branches: [ dev ]
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
 
-# jobs:
-#   test-api:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         node-version: [16.X]
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Use Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#       - run: |
-#           cd api
-#           cat > .env <<EOF
-#           PORT=3090
-#           NODE_ENV=development
-#           DATABASE_URL=postgres://bon:1234567890@db:5432/events_location
-#           DEV_DATABASE_URL=postgres://bon:1234567890@db:5432/events_location
-#           TEST_DATABASE_URL=postgres://bon:1234567890@db:5432/app_test
-#           JWT_SECRET=kvdsfyugsdifgdsyukfgydsiukfs
-#           NODE_ENV=test
-#           EOF
-#           yarn install --frozen-lockfile
-#           yarn test
-#           yarn lint
-#           yarn build
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.X]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          cd api
+          echo "$APIDEV_ENV" >> .env
+          cat .env
+          yarn install --frozen-lockfile
+          yarn lint
+        shell: bash
+        env:
+          APIDEV_ENV: ${{secrets.APIDEV_ENV}}
   
-#   test-client:
-#     runs-on: ubuntu-latest
-#     strategy:
-#         matrix:
-#           node-version: [16.X]
-#     steps:
-#         - uses: actions/checkout@v2
-#         - name: Use Node.js ${{ matrix.node-version }}
-#           uses: actions/setup-node@v1
-#           with:
-#             node-version: ${{ matrix.node-version }}
+  test-client:
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          node-version: [16.X]
+    steps:
+        - uses: actions/checkout@v2
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
 
-#         - run: |
-#             cd client
-#             yarn install --frozen-lockfile
-#             yarn lint
-#             yarn build
+        - run: |
+            cd client
+            echo "$CLIENTDEV_ENV_FILE" >> .env
+            cat .env
+            yarn install --frozen-lockfile
+            yarn lint
+            yarn build
+          shell: bash
+          env:
+            APIDEV_ENV: ${{secrets.CLIENTDEV_ENV_FILE}}
