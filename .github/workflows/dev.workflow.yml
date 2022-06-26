@@ -1,71 +1,58 @@
-name: develop
+# name: develop
 
-# Controls when the workflow will run
-on:
-  push:
-    branches: [ dev ]
-  pull_request:
-    branches: [ dev ]
-env:
-  DOCKER_USER: ${{secrets.DOCKER_USER}}
-  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+# # Controls when the workflow will run
+# on:
+#   pull_request:
+#     branches: [ dev ]
+# env:
+#   DOCKER_USER: ${{secrets.DOCKER_USER}}
+#   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+#   SSH_HOST: ${{secrets.SSH_HOST}}
+#   SSH_KEY: ${{secrets.SSH_KEY}}
+#   SSH_USERNAME: ${{secrets.SSH_USERNAME}}
 
-jobs:
-  test-api:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.X]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: |
-          cd api
-          echo "$APIDEV_ENV" >> .env
-          yarn install --frozen-lockfile
-          yarn lint
-        shell: bash
-        env:
-          APIDEV_ENV: ${{secrets.APIDEV_ENV}}
+# jobs:
+#   test-api:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [16.X]
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - run: |
+#           cd api
+#           echo "$APIDEV_ENV" >> .env
+#           yarn install --frozen-lockfile
+#           yarn lint
+#         shell: bash
+#         env:
+#           APIDEV_ENV: ${{secrets.APIDEV_ENV}}
   
-  test-client:
-    runs-on: ubuntu-latest
-    strategy:
-        matrix:
-          node-version: [16.X]
-    steps:
-        - uses: actions/checkout@v2
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
+#   test-client:
+#     runs-on: ubuntu-latest
+#     strategy:
+#         matrix:
+#           node-version: [16.X]
+#     steps:
+#         - uses: actions/checkout@v2
+#         - name: Use Node.js ${{ matrix.node-version }}
+#           uses: actions/setup-node@v1
+#           with:
+#             node-version: ${{ matrix.node-version }}
 
-        - run: |
-            cd client
-            echo "$CLIENTDEV_ENV_FILE" >> .env
-            yarn install --frozen-lockfile
-            yarn lint
-            yarn build
-          shell: bash
-          env:
-            APIDEV_ENV: ${{secrets.CLIENTDEV_ENV_FILE}}
-  publish-api:
-    runs-on:  ubuntu-latest
+#         - run: |
+#             cd client
+#             echo "$CLIENTDEV_ENV_FILE" >> .env
+#             yarn install --frozen-lockfile
+#             yarn lint
+#             yarn build
+#           shell: bash
+#           env:
+#             APIDEV_ENV: ${{secrets.CLIENTDEV_ENV_FILE}}
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: docker login
-        run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-      - name: Get current date # get the date of the build
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%M-%S')"
-      - name: Build api image
-        run: |
-          docker build api --file ./api/Dockerfile --tag $DOCKER_USER/api-dev:${{ steps.date.outputs.date }}
-      - name: Push the api image to registry
-        run: docker push $DOCKER_USER/api-dev:${{ steps.date.outputs.date }}
+
 

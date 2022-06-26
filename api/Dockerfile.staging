@@ -1,0 +1,21 @@
+FROM node:16
+
+WORKDIR /usr/api
+COPY package.json yarn.lock ./
+
+RUN yarn global add rimraf
+
+RUN rimraf ./dist
+
+RUN yarn install --production --frozen-lockfile
+
+
+COPY . .
+
+RUN yarn lint
+
+RUN yarn build
+
+EXPOSE 3091
+CMD ["yarn", "start"]
+
