@@ -30,8 +30,9 @@ export class UsersService {
     }
   }
 
-  async update(updateDto, userId) {
-    const user = this.usersRepository.update({ id: userId }, updateDto);
+  async update(userId, updateDto) {
+    const user = this.findById(userId);
+    return user;
   }
 
   async showById(id: string): Promise<User> {

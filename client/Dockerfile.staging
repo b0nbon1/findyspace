@@ -1,0 +1,16 @@
+FROM node:16
+
+WORKDIR /usr/client/
+COPY package.json yarn.lock ./
+
+RUN yarn install --production --frozen-lockfile
+
+COPY . .
+
+RUN yarn lint
+
+RUN yarn build
+
+EXPOSE 5091
+CMD ["yarn", "start"]
+

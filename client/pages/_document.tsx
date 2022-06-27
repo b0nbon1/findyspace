@@ -1,9 +1,7 @@
 import React from 'react';
-import Document, {
-  Html, Head, Main, NextScript,
-} from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import createEmotionCache from '../utility/createEmotionCache';
+import createEmotionCache from '../src/utils/createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {
@@ -49,8 +47,24 @@ export default class MyDocument extends Document {
           <meta name="googlebot" content="all" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
+          <meta
+            name="keywords"
+            content={[
+              'findy',
+              'findyspace',
+              'space',
+              'event locations',
+              'co-working spaces',
+            ].join(',')}
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          />
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { createTheme } from '@mui/material/styles';
 
 const Theme = createTheme({
@@ -7,7 +8,8 @@ const Theme = createTheme({
       light: '#C3C4FE',
     },
     background: {
-      default: '#F8FAFC',
+      default: '#FFFFFF',
+      paper: '#FFFFFF',
     },
     secondary: {
       main: '#F27956',
@@ -31,6 +33,66 @@ const Theme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
+    h1: {
+      fontFamily: [
+        '"Readex Pro"',
+        '-apple-system',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+    h2: {
+      fontFamily: [
+        '"Readex Pro"',
+        '-apple-system',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+    h3: {
+      fontFamily: [
+        '"Readex Pro"',
+        '-apple-system',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+    h4: {
+      fontFamily: [
+        '"Readex Pro"',
+        '-apple-system',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+    h5: {
+      fontFamily: [
+        '"Readex Pro"',
+        '-apple-system',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+    h6: {
+      fontFamily: [
+        '"Readex Pro"',
+        '-apple-system',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
   },
 });
 

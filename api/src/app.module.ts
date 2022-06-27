@@ -13,6 +13,8 @@ import { ChatModule } from './chat/chat.module';
 import { HttpModule } from '@nestjs/axios';
 import { SpaceModule } from './space/space.module';
 import { BlogModule } from './blog/blog.module';
+import { AddressModule } from './address/address.module';
+import { FilesModule } from './files/files.module';
 
 @Module({
   imports: [
@@ -27,11 +29,12 @@ import { BlogModule } from './blog/blog.module';
     AuthModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'static'),
-      exclude: ['/api*', '/v1*'],
     }),
     ChatModule,
     SpaceModule,
     BlogModule,
+    AddressModule,
+    FilesModule,
   ],
   controllers: [AppController],
   providers: [],

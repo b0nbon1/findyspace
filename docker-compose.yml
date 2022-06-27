@@ -1,26 +1,24 @@
-version: "3"
+version: "3.8"
 services:
   api:
-    image: findyspaceapi
-    container_name: findyspaceapi
+    container_name: api
     restart: always
-    env_file: ./api/.env
+    env_file: 
+      - ./api/.env
     stdin_open: true
     tty: true
-    environment:
-      - NODE_ENV=$NODE_ENV
     build:
       context: api
-      dockerfile: Dockerfile
+      dockerfile: ${DOCKERFILE}
     volumes:
       - ./api:/usr/api/
-      - /usr/api/node_modules
+      - ./api/node_modules:/usr/api/node_modules
     depends_on:
       - db
     links:
       - db
     ports:
-      - '3090:3090'
+      - '${API_PORT}:${API_PORT}'
     networks:
       - findyspace
   db:
@@ -30,35 +28,33 @@ services:
       context: ./api
       dockerfile: Dockerfile.psql
     ports:
-    - "5432:5432"
+    - "5433:5432"
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     env_file:
-      - docker.env
+      - .env
     networks:
       - findyspace
 
   client:
-    image: findyspaceclient
-    container_name: findyspaceclient
+    container_name: client
     restart: always
     stdin_open: true
     tty: true
-    env_file: ./client/.env
-    environment:
-      - NODE_ENV=$NODE_ENV
+    env_file:
+      - ./client/.env
     build:
       context: client
-      dockerfile: Dockerfile
+      dockerfile: ${DOCKERFILE}
     volumes:
       - ./client:/usr/client/
-      - /usr/client/node_modules
+      - ./client/node_modules:/usr/client/node_modules
     depends_on:
       - api
     links:
       - api
     ports:
-      - '4090:4090'
+      - '${CLIENT_PORT}:${CLIENT_PORT}'
     networks:
       - findyspace
 
@@ -72,10 +68,12 @@ services:
     volumes:
       - /data/pgadmin:/root/.pgadmin
     env_file:
-      - docker.env
+      - .env
     networks:
       - findyspace
  
 networks:
   findyspace:
     driver: bridge
+  nginx-proxy-manager_default:
+    external: true
