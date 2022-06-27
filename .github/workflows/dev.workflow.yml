@@ -2,10 +2,14 @@
 
 # # Controls when the workflow will run
 # on:
-#   push:
-#     branches: [ dev ]
 #   pull_request:
 #     branches: [ dev ]
+# env:
+#   DOCKER_USER: ${{secrets.DOCKER_USER}}
+#   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+#   SSH_HOST: ${{secrets.SSH_HOST}}
+#   SSH_KEY: ${{secrets.SSH_KEY}}
+#   SSH_USERNAME: ${{secrets.SSH_USERNAME}}
 
 # jobs:
 #   test-api:
@@ -21,19 +25,12 @@
 #           node-version: ${{ matrix.node-version }}
 #       - run: |
 #           cd api
-#           cat > .env <<EOF
-#           PORT=3090
-#           NODE_ENV=development
-#           DATABASE_URL=postgres://bon:1234567890@db:5432/events_location
-#           DEV_DATABASE_URL=postgres://bon:1234567890@db:5432/events_location
-#           TEST_DATABASE_URL=postgres://bon:1234567890@db:5432/app_test
-#           JWT_SECRET=kvdsfyugsdifgdsyukfgydsiukfs
-#           NODE_ENV=test
-#           EOF
+#           echo "$APIDEV_ENV" >> .env
 #           yarn install --frozen-lockfile
-#           yarn test
 #           yarn lint
-#           yarn build
+#         shell: bash
+#         env:
+#           APIDEV_ENV: ${{secrets.APIDEV_ENV}}
   
 #   test-client:
 #     runs-on: ubuntu-latest
@@ -49,6 +46,13 @@
 
 #         - run: |
 #             cd client
+#             echo "$CLIENTDEV_ENV_FILE" >> .env
 #             yarn install --frozen-lockfile
 #             yarn lint
 #             yarn build
+#           shell: bash
+#           env:
+#             APIDEV_ENV: ${{secrets.CLIENTDEV_ENV_FILE}}
+
+
+

@@ -1,1 +1,4 @@
 pgdata
+
+docker.env
+.env
