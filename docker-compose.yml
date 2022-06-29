@@ -2,6 +2,7 @@ version: "3.8"
 services:
   api:
     container_name: api
+    image: b0nb0n/findy-api
     restart: always
     env_file: 
       - ./api/.env
@@ -28,7 +29,7 @@ services:
       context: ./api
       dockerfile: Dockerfile.psql
     ports:
-    - "5433:5432"
+    - "${POSTGRES_PORT}:5432"
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     env_file:
@@ -37,6 +38,7 @@ services:
       - findyspace
 
   client:
+    image: b0nb0n/findy-client
     container_name: client
     restart: always
     stdin_open: true
