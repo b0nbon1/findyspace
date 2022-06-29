@@ -5,15 +5,9 @@ services:
     image: b0nb0n1/findy-api-${ENVIRONMENT}:${CI_COMMIT}
     restart: always
     env_file: 
-      - ./api/.env
+      - .env.api
     stdin_open: true
     tty: true
-    build:
-      context: api
-      dockerfile: ${DOCKERFILE}
-    volumes:
-      - ./api:/usr/api/
-      - ./api/node_modules:/usr/api/node_modules
     depends_on:
       - db
     links:
@@ -22,20 +16,22 @@ services:
       - '${API_PORT}:${API_PORT}'
     networks:
       - findyspace
+      - nginx-proxy-manager_default
   db:
     container_name: db
-    image: postgres:latest
+    image: postgres:14
     build:
-      context: ./api
+      context: .
       dockerfile: Dockerfile.psql
     ports:
-    - "${POSTGRES_PORT}:5432"
+    - '5432:5432'
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     env_file:
       - .env
     networks:
       - findyspace
+      - nginx-proxy-manager_default
 
   client:
     image: b0nb0n1/findy-client-${ENVIRONMENT}:${CI_COMMIT}
@@ -44,13 +40,7 @@ services:
     stdin_open: true
     tty: true
     env_file:
-      - ./client/.env
-    build:
-      context: client
-      dockerfile: ${DOCKERFILE}
-    volumes:
-      - ./client:/usr/client/
-      - ./client/node_modules:/usr/client/node_modules
+      - .env.client
     depends_on:
       - api
     links:

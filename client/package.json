@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev -p 5090",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 5091",
     "lint": "next lint",
     "lint-fix": "eslint lint --fix .",
     "test": "jest"

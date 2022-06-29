@@ -13,9 +13,10 @@ env:
   SSH_HOST: ${{secrets.SSH_HOST}}
   SSH_KEY: ${{secrets.SSH_KEY}}
   SSH_USERNAME: ${{secrets.SSH_USERNAME}}
-  APIDEV_ENV: ${{secrets.APIDEV_ENV}}
-  CLIENTDEV_ENV_FILE: ${{secrets.STAGING_CLIENT_ENV}}
+  STAGING_API_ENV: ${{secrets.STAGING_API_ENV}}
+  STAGING_CLIENT_ENV: ${{secrets.STAGING_CLIENT_ENV}}
   STAGING_ENV_FILE: ${{secrets.STAGING_ENV_FILE}}
+  GITHUB_SHA: ${GITHUB_SHA}
 
 jobs:
   test-api:
@@ -34,7 +35,7 @@ jobs:
           echo "$APIDEV_ENV" > .env
           yarn install --frozen-lockfile
           yarn lint
-          echo ${GITHUB_SHA}
+          echo $GITHUB_SHA
         shell: bash
   
   test-client:
@@ -51,62 +52,70 @@ jobs:
 
         - run: |
             cd client
-            echo "$CLIENTDEV_ENV_FILE" > .env
+            echo "$STAGING_CLIENT_ENV" > .env
             yarn install --frozen-lockfile
             yarn lint
-            yarn build
           shell: bash
-          env:
-            APIDEV_ENV: ${{secrets.CLIENTDEV_ENV_FILE}}
-  # publish-api:
-  #   needs: test-api
-  #   runs-on:  ubuntu-latest
-
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: docker login
-  #       run: |
-  #         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-  #     - name: Get current date # get the date of the build
-  #       id: date
-  #       run: echo "::set-output name=date::$(date +'%Y-%m-%d-%M-%S')"
-  #     - name: Build api image
-  #       run: |
-  #         docker build api --file ./api/Dockerfile.staging --tag $DOCKER_USER/api-dev:${{ steps.date.outputs.date }}
-  #     - name: Push the api image to registry
-  #       run: docker push $DOCKER_USER/api-dev:${{ steps.date.outputs.date }}
-
-  # publish-client:
-  #   needs: test-client
-  #   runs-on:  ubuntu-latest
-
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: docker login
-  #       run: |
-  #         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-  #     - name: Get current date # get the date of the build
-  #       id: date
-  #       run: echo "::set-output name=date::$(date +'%Y-%m-%d-%M-%S')"
-  #     - name: Build api image
-  #       run: |
-  #         docker build api --file ./api/Dockerfile.staging --tag $DOCKER_USER/api-client:${{ steps.date.outputs.date }}
-  deploy-staging:
-    # needs:
-    #   - publish-api
-    #   - publish-client
+  publish-api:
+    needs: test-api
     runs-on:  ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+      - name: docker login
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - name: Build api image
+        run: |
+          docker build api --file ./api/Dockerfile.staging --tag $DOCKER_USER/findy-api-staging:$GITHUB_SHA
+      - name: Push the api image to registry
+        run: docker push $DOCKER_USER/findy-api-staging:$GITHUB_SHA
+
+  publish-client:
+    needs: test-client
+    runs-on:  ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: docker login
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - name: Build client image
+        run: |
+          docker build client --file ./client/Dockerfile.staging --tag $DOCKER_USER/findy-client-staging:$GITHUB_SHA
+      - name: Push the client image to registry
+        run: docker push $DOCKER_USER/findy-client-staging:$GITHUB_SHA
+  deploy-staging:
+    needs:
+      - publish-api
+      - publish-client
+    runs-on:  ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Create .env file
+        run: |
+          echo "$STAGING_ENV_FILE" > .env
+          echo "CI_COMMIT=${GITHUB_SHA}" >> .env
+          cat > .configenv << EOF
+          export DOCKER_USER=$DOCKER_USER
+          export GITHUB_SHA=$GITHUB_SHA
+          export DOCKER_PASSWORD=$DOCKER_PASSWORD
+          EOF
+          echo "$STAGING_CLIENT_ENV" > .env.client
+          echo "$STAGING_API_ENV" > .env.api
+          cp ./api/Dockerfile.psql Dockerfile.psql
+          mkdir pg-init-scripts
+          cp ./api/pg-init-scripts/postgis.sql  ./pg-init-scripts/postgis.sql
+
       - name: Copy Dockerfile to staging
         uses: appleboy/scp-action@master
         with:
           host: $SSH_HOST
           key: $SSH_KEY
           username: $SSH_USERNAME
-          source: 'docker-compose.yml'
-          target: '/root/findyspace/staging'
-          rm: true
+          source: 'docker-compose.prod.yml,.env,.configenv,Dockerfile.psql,.env.client,.env.api,pg-init-scripts/postgis.sql'
+          target: '~/findyspace/staging/'
       - name: Deploy the all the 
         uses: appleboy/ssh-action@v0.1.2
         with:
@@ -117,6 +126,12 @@ jobs:
           script: |
             echo "Pulling images from registry..."
             cd /root/findyspace/staging
-            echo "$STAGING_ENV_FILE" > .env
-            
-
+            source .configenv
+            docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+            docker pull $DOCKER_USER/findy-client-staging:$GITHUB_SHA
+            docker pull $DOCKER_USER/findy-api-staging:$GITHUB_SHA
+            docker-compose -f docker-compose.prod.yml --env-file .env build --no-cache
+            docker-compose -f docker-compose.prod.yml up -d
+            docker image prune -f
+           
+         
