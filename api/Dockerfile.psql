@@ -6,3 +6,5 @@ RUN apt-get update \
     && apt-get install postgis -y
 
 COPY ./pg-init-scripts/postgis.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 5432
